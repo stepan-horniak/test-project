@@ -1,0 +1,24 @@
+@use "sass:math";
+//==============function============
+@function toRem($px, $rem: 16) {
+  @return math.div($px, $rem) * 1rem;
+}
+@function toEm($px, $em: 16) {
+  @return math.div($px, $em) * 1em;
+}
+//===============================
+[class*="__container"] {
+  max-width: toRem(1270);
+  margin: 0 auto;
+  padding-left: toRem(15);
+  padding-right: toRem(15);
+  color: #000;
+}
+@import "_icon-fonts.scss";
+@import "_font.scss";
+body {
+  font-family: Satoshi, sans-serif;
+  font-weight: 400;
+}
+@import "_reset.scss";
+@import "_header.scss";
