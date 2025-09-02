@@ -9,15 +9,40 @@ function windowLoaded() {
     // if (el.closest(".header-main-tell__icon")) {
     //   window.location.href = "tel:+380931234567"
     // }
-
+    //===========header-burger============
     if (el.closest(".header__burger")) {
       document.querySelector(".header__burger").classList.toggle("active")
       document.querySelector(".header__nav").classList.toggle("active")
+    } else if (!el.closest(".nav-header")) {
+      document.querySelector(".header__burger").classList.remove("active")
+      document.querySelector(".header__nav").classList.remove("active")
+    }
+    //===========header-search============
+
+    if (el.closest(".search-header__button")) {
+      if (
+        document
+          .querySelector(".search-header__button")
+          .classList.contains("active")
+      )
+        return
+      document.querySelector(".search-header__input").classList.toggle("active")
+      document.querySelector(".search-header").classList.toggle("active")
+      document
+        .querySelector(".search-header__button")
+        .classList.toggle("active")
+    } else if (!el.closest(".search-header")) {
+      document.querySelector(".search-header__input").classList.remove("active")
+      document.querySelector(".search-header").classList.remove("active")
+      document
+        .querySelector(".search-header__button")
+        .classList.remove("active")
     }
   }
   document.addEventListener("click", (e) => documentActions(e))
 
   //======================================================================
+
   function handleScreenChange(e) {
     const screenWidth = window.innerWidth
     //=========================
@@ -46,26 +71,17 @@ function windowLoaded() {
     const headerFavoriteContainer = document.querySelector(".favorite-header")
     const headerSearchContainer = document.querySelector(".search-header")
 
-    if (
-      !headerRowContainer ||
-      !headerFavoriteContainer ||
-      !headerSearchContainer
-    )
-      return
-
-    if (screenWidth <= 767.98) {
-      if (!headerFavoriteContainer.contains(headerSearchContainer)) {
+    if (headerRowContainer || headerFavoriteContainer || headerSearchContainer)
+      if (screenWidth <= 767.98) {
         headerFavoriteContainer.prepend(headerSearchContainer)
-      }
-    } else {
-      if (!headerRowContainer.contains(headerSearchContainer)) {
+      } else {
         headerRowContainer.append(headerSearchContainer)
+        headerRowContainer.append(headerFavoriteContainer)
       }
-    }
   }
   //=============menu-header============
 
   //========================
+  handleScreenChange()
+  window.addEventListener("resize", handleScreenChange)
 }
-handleScreenChange()
-window.addEventListener("resize", handleScreenChange)
