@@ -38,6 +38,11 @@ function windowLoaded() {
         .querySelector(".search-header__button")
         .classList.remove("active")
     }
+    //===========header-top-bar-close============
+    if (el.closest(".top-bar__cross")) {
+      document.querySelector(".top-bar").style.display = "none"
+    }
+    //====================================
   }
   document.addEventListener("click", (e) => documentActions(e))
 
@@ -84,4 +89,11 @@ function windowLoaded() {
   //========================
   handleScreenChange()
   window.addEventListener("resize", handleScreenChange)
+
+  // function heightSectionHero() {
+  //   const heroWrapper = document.querySelector(".hero__wrapper")
+  //   const brands = document.querySelector(".brands")
+  //   const elPaddingBottom = document.querySelector(".info-hero__stats")
+
+  // }
 }
