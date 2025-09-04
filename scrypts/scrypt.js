@@ -50,6 +50,8 @@ function windowLoaded() {
 
   function handleScreenChange(e) {
     const screenWidth = window.innerWidth
+    const screenHeight = window.innerHeight
+
     //=========================
     // if (screenWidth > 767.98)
     //   if (screenWidth < 991.98)
@@ -76,24 +78,18 @@ function windowLoaded() {
     const headerFavoriteContainer = document.querySelector(".favorite-header")
     const headerSearchContainer = document.querySelector(".search-header")
 
-    if (headerRowContainer || headerFavoriteContainer || headerSearchContainer)
+    if (headerRowContainer && headerFavoriteContainer && headerSearchContainer)
       if (screenWidth <= 767.98) {
         headerFavoriteContainer.prepend(headerSearchContainer)
       } else {
         headerRowContainer.append(headerSearchContainer)
         headerRowContainer.append(headerFavoriteContainer)
       }
+    //=================hero-height========================
   }
   //=============menu-header============
 
   //========================
   handleScreenChange()
   window.addEventListener("resize", handleScreenChange)
-
-  // function heightSectionHero() {
-  //   const heroWrapper = document.querySelector(".hero__wrapper")
-  //   const brands = document.querySelector(".brands")
-  //   const elPaddingBottom = document.querySelector(".info-hero__stats")
-
-  // }
 }

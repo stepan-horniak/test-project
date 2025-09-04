@@ -892,33 +892,76 @@ header {
 }
 .hero__container {
   padding-top: 12.4375rem;
+  overflow: hidden;
 }
 .hero__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  gap: 2rem;
+}
+@media (max-width: 47.99875em) {
+  .hero__row {
+    display: block;
+  }
 }
 .hero__info {
   max-width: 37.25rem;
 }
-.hero__image {
-  max-width: 31.25rem;
+@media (max-width: 47.99875em) {
+  .hero__info {
+    max-width: none;
+  }
+}
+.hero__wrapper-image {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  min-width: 31.5625rem;
+}
+@media (max-width: 61.99875em) {
+  .hero__wrapper-image {
+    min-width: 25rem;
+  }
 }
 .hero__image > img {
   width: 100%;
+  display: block;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
+@media (max-width: 47.99875em) {
+  .info-hero {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .info-hero__title {
   margin-bottom: 2rem;
   font-size: 4rem;
   font-family: "Integral CF", sans-serif;
   font-weight: 700;
+}
+@media (max-width: 75em) {
+  .info-hero__title {
+    font-size: 3.125rem;
+  }
+}
+@media (max-width: 61.99875em) {
+  .info-hero__title {
+    font-size: 2.25rem;
+  }
 }
 .info-hero__text {
   margin-bottom: 2rem;
@@ -933,8 +976,31 @@ header {
   padding: 1rem 3.375rem;
   text-align: center;
 }
+@media (max-width: 47.99875em) {
+  .info-hero__shop {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
+}
 .info-hero__stats {
   padding-bottom: 7.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media (max-width: 75em) {
+  .info-hero__stats {
+    padding-bottom: 2.5rem;
+  }
+}
+@media (max-width: 47.99875em) {
+  .info-hero__stats {
+    padding-bottom: 1.875rem;
+  }
 }
 
 .stats-hero {
@@ -942,21 +1008,37 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 2rem;
+}
+@media (max-width: 61.99875em) {
+  .stats-hero {
+    gap: 0.9375rem;
+  }
+}
+@media (max-width: 47.99875em) {
+  .stats-hero {
+    gap: 0.75rem;
+  }
 }
 .stats-hero__number {
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 1px;
 }
+@media (max-width: 61.99875em) {
+  .stats-hero__number {
+    font-size: 1.5625rem;
+  }
+}
 .stats-hero__info-text {
   line-height: 1.37; /* 22/16 */
   color: rgba(0, 0, 0, 0.6);
-  white-space: nowrap;
 }
 .stats-hero__border {
   width: 0.0625rem;
-  height: 100px;
+  max-height: 100px;
   background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -975,6 +1057,153 @@ header {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 0.9375rem;
+  gap: 1.25rem;
   padding: 2.75rem 0;
+}
+@media (max-width: 61.99875em) {
+  .brands__row {
+    padding: 2.4375rem 0;
+  }
+}
+@media (max-width: 47.99875em) {
+  .brands__row {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+.brands__row > img {
+  height: 22px;
+}
+
+.delivery__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.delivery__title {
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: 4.5rem 0 3.4375rem 0;
+  font-size: 3rem;
+  font-family: "Integral CF", sans-serif;
+  font-weight: 700;
+}
+.delivery__cards {
+  margin-bottom: 2.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.delivery__button-oll {
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-bottom: 4rem;
+  padding: 1rem 4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3.875rem;
+  font-weight: 500;
+}
+
+.card-delivery__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 0.5rem;
+  max-width: 18.625rem;
+}
+.card-delivery__image {
+  margin-bottom: 0.5rem;
+  background-color: #f0eeed;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+.card-delivery__image > img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: auto;
+}
+.card-delivery__title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.rate-card-delivery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 0.625rem;
+     -moz-column-gap: 0.625rem;
+          column-gap: 0.625rem;
+}
+.rate-card-delivery__stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 0.3125rem;
+     -moz-column-gap: 0.3125rem;
+          column-gap: 0.3125rem;
+}
+.rate-card-delivery__star::before {
+  font-size: 1.125rem;
+  color: #ffc633;
+}
+.rate-card-delivery__numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.875rem;
+}
+.rate-card-delivery__number-max {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.price-card-delivery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 0.625rem;
+     -moz-column-gap: 0.625rem;
+          column-gap: 0.625rem;
+}
+.price-card-delivery__price {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.price-card-delivery__old-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.4);
+}
+.price-card-delivery__sale-percent {
+  color: #ff3333;
+  font-size: 0.75rem;
+  font-weight: 500;
+  width: 100%;
+  padding: 0.375rem 0.875rem;
+  border-radius: 3.875rem;
+  background-color: rgba(255, 51, 51, 0.1);
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 3.625rem;
+          flex: 0 0 3.625rem;
 }
