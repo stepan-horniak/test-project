@@ -6,9 +6,6 @@ function windowLoaded() {
   function documentActions(e) {
     const el = e.target
     //=======================
-    // if (el.closest(".header-main-tell__icon")) {
-    //   window.location.href = "tel:+380931234567"
-    // }
     //===========header-burger============
     if (el.closest(".header__burger")) {
       document.querySelector(".header__burger").classList.toggle("active")
@@ -85,10 +82,25 @@ function windowLoaded() {
         headerRowContainer.append(headerSearchContainer)
         headerRowContainer.append(headerFavoriteContainer)
       }
-    //=================hero-height========================
+    //========================================
   }
-  //=============menu-header============
+  //=============delivery-component-product============
 
+  class productsCard {
+    constructor(data, containerClass) {
+      this.data = data
+      this.container = document.querySelector(containerClass)
+    }
+    createWrapperCard() {
+      this.cardWrapper = createElement("div")
+    }
+    render() {
+      this.container.innerHTML = createWrapperCard()
+      console.log(this.container)
+    }
+  }
+  const productDelivery = new productsCard(productsDelivery, ".card-delivery")
+  productDelivery.render()
   //========================
   handleScreenChange()
   window.addEventListener("resize", handleScreenChange)
