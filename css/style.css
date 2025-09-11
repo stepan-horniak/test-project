@@ -1075,7 +1075,13 @@ header {
   height: 22px;
 }
 
-.delivery__row {
+.arrivals__container::after {
+  content: "";
+  width: 100%;
+  height: 0.0625rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.arrivals__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1084,7 +1090,7 @@ header {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.delivery__title {
+.arrivals__title {
   -ms-flex-item-align: center;
       align-self: center;
   margin: 4.5rem 0 3.4375rem 0;
@@ -1092,13 +1098,16 @@ header {
   font-family: "Integral CF", sans-serif;
   font-weight: 700;
 }
-.delivery__cards {
+.arrivals__cards {
   margin-bottom: 2.25rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  row-gap: 1.875rem;
+  -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
+          column-gap: 1.25rem;
 }
-.delivery__button-oll {
+.arrivals__button-oll {
   -ms-flex-item-align: center;
       align-self: center;
   margin-bottom: 4rem;
@@ -1110,14 +1119,14 @@ header {
   transition: color ease 0.3s;
 }
 @media (any-hover: hover) {
-  .delivery__button-oll:hover {
+  .arrivals__button-oll:hover {
     -webkit-transition: color ease 0.3s;
     transition: color ease 0.3s;
     color: rgba(0, 0, 0, 0.5);
   }
 }
 
-.card-delivery__card {
+.card-arrivals__card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1128,23 +1137,23 @@ header {
   row-gap: 0.5rem;
   max-width: 18.625rem;
 }
-.card-delivery__image {
+.card-arrivals__image {
   margin-bottom: 0.5rem;
   background-color: #f0eeed;
   border-radius: 1.25rem;
   overflow: hidden;
 }
-.card-delivery__image > img {
+.card-arrivals__image > img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   height: auto;
 }
-.card-delivery__title {
+.card-arrivals__title {
   font-size: 1rem;
   font-weight: 700;
 }
-.rate-card-delivery {
+.rate-card-arrivals {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1155,7 +1164,7 @@ header {
      -moz-column-gap: 0.625rem;
           column-gap: 0.625rem;
 }
-.rate-card-delivery__stars {
+.rate-card-arrivals__stars {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1166,11 +1175,11 @@ header {
      -moz-column-gap: 0.3125rem;
           column-gap: 0.3125rem;
 }
-.rate-card-delivery__star::before {
+.rate-card-arrivals__star::before {
   font-size: 1.125rem;
   color: #ffc633;
 }
-.rate-card-delivery__numbers {
+.rate-card-arrivals__numbers {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1179,11 +1188,11 @@ header {
           align-items: center;
   font-size: 0.875rem;
 }
-.rate-card-delivery__number-max {
+.rate-card-arrivals__number-max {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.price-card-delivery {
+.price-card-arrivals {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1194,17 +1203,17 @@ header {
      -moz-column-gap: 0.625rem;
           column-gap: 0.625rem;
 }
-.price-card-delivery__price {
+.price-card-arrivals__price {
   font-size: 1.5rem;
   font-weight: 700;
 }
-.price-card-delivery__old-price {
+.price-card-arrivals__old-price {
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: line-through;
   color: rgba(0, 0, 0, 0.4);
 }
-.price-card-delivery__sale-percent {
+.price-card-arrivals__sale-percent {
   color: #ff3333;
   font-size: 0.75rem;
   font-weight: 500;
@@ -1215,4 +1224,49 @@ header {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 3.625rem;
           flex: 0 0 3.625rem;
+}
+
+.selling__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.selling__title {
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: 4.5rem 0 3.4375rem 0;
+  font-size: 3rem;
+  font-family: "Integral CF", sans-serif;
+  font-weight: 700;
+}
+.selling__cards {
+  margin-bottom: 2.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  row-gap: 1.875rem;
+  -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+}
+.selling__button-oll {
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-bottom: 4rem;
+  padding: 1rem 4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3.875rem;
+  font-weight: 500;
+  -webkit-transition: color ease 0.3s;
+  transition: color ease 0.3s;
+}
+@media (any-hover: hover) {
+  .selling__button-oll:hover {
+    -webkit-transition: color ease 0.3s;
+    transition: color ease 0.3s;
+    color: rgba(0, 0, 0, 0.5);
+  }
 }

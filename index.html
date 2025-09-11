@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
-  <script src="./scrypts/data-delivery.js"></script>
+  <script src="./scrypts/data.js"></script>
+  <script defer src="./scrypts/show-product-component.js"></script>
   <script src="./scrypts/scrypt.js"></script>
   <title>clothes</title>
 </head>
@@ -122,37 +123,23 @@
         </div>
       </div>
     </div>
-    <section class="delivery">
-      <div class="delivery__container">
-        <div class="delivery__row">
-          <h2 class="delivery__title">NEW ARRIVALS</h2>
-          <div class="delivery__cards card-delivery">
-            <div class="card-delivery__card">
-              <div class="card-delivery__image">
-                <img src="./images/delivery/frame.png" alt="">
-              </div>
-              <div class="card-delivery__title">T-SHIRT WITH TAPE DETAILS</div>
-              <div class="card-delivery__rate rate-card-delivery">
-                <div class="rate-card-delivery__stars">
-                  <span class="rate-card-delivery__star _icon-star"></span>
-                  <span class="rate-card-delivery__star _icon-star-half"></span>
-
-                </div>
-                <div class="rate-card-delivery__numbers">
-                  <div class="rate-card-delivery__number">1.5/</div>
-                  <div class="rate-card-delivery__number-max">5</div>
-                </div>
-              </div>
-              <div class="card-delivery__price price-card-delivery">
-                <div class="price-card-delivery__price">$120</div>
-                <div class="price-card-delivery__old-price">$150</div>
-                <div class="price-card-delivery__sale-percent">-30%</div>
-              </div>
-            </div>
-
-
+    <section class="arrivals">
+      <div class="arrivals__container">
+        <div class="arrivals__row">
+          <h2 class="arrivals__title">NEW ARRIVALS</h2>
+          <div class="arrivals__cards card-arrivals">
           </div>
-          <button class="delivery__button-oll">View All</button>
+          <button class="arrivals__button-oll">View All</button>
+        </div>
+      </div>
+    </section>
+    <section class="selling">
+      <div class="selling__container">
+        <div class="selling__row">
+          <h2 class="selling__title">top selling</h2>
+          <div class="selling__cards card-selling">
+          </div>
+          <button class="selling__button-oll">View All</button>
         </div>
       </div>
     </section>

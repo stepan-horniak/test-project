@@ -39,6 +39,20 @@ function windowLoaded() {
     if (el.closest(".top-bar__cross")) {
       document.querySelector(".top-bar").style.display = "none"
     }
+    //==========arrivals-show-more-products========================
+
+    if (el.closest(".arrivals__button-oll")) {
+      productArrivals.render(4, Infinity)
+      document.querySelector(".arrivals__button-oll").remove()
+      console.log(el)
+    }
+    //==========selling-show-more-products========================
+
+    if (el.closest(".selling__button-oll")) {
+      productArrivals.render(4, Infinity)
+      document.querySelector(".selling__button-oll").remove()
+      console.log(el)
+    }
     //====================================
   }
   document.addEventListener("click", (e) => documentActions(e))
@@ -84,24 +98,10 @@ function windowLoaded() {
       }
     //========================================
   }
-  //=============delivery-component-product============
 
-  class productsCard {
-    constructor(data, containerClass) {
-      this.data = data
-      this.container = document.querySelector(containerClass)
-    }
-    createWrapperCard() {
-      this.cardWrapper = createElement("div")
-    }
-    render() {
-      this.container.innerHTML = createWrapperCard()
-      console.log(this.container)
-    }
-  }
-  const productDelivery = new productsCard(productsDelivery, ".card-delivery")
-  productDelivery.render()
   //========================
   handleScreenChange()
   window.addEventListener("resize", handleScreenChange)
 }
+//
+//===============================================
