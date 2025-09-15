@@ -44,14 +44,12 @@ function windowLoaded() {
     if (el.closest(".arrivals__button-oll")) {
       productArrivals.render(4, Infinity)
       document.querySelector(".arrivals__button-oll").remove()
-      console.log(el)
     }
     //==========selling-show-more-products========================
 
     if (el.closest(".selling__button-oll")) {
-      productArrivals.render(4, Infinity)
+      productSelling.render(4, Infinity)
       document.querySelector(".selling__button-oll").remove()
-      console.log(el)
     }
     //====================================
   }
@@ -102,6 +100,52 @@ function windowLoaded() {
   //========================
   handleScreenChange()
   window.addEventListener("resize", handleScreenChange)
+
+  //====================================================================
+  // const swiper = new Swiper(".clients__swiper", {
+  //   loop: true,
+  //   slidesPerView: 3,
+  //   spaceBetween: 20,
+  //   centeredSlides: true,
+  //   initialSlide: 1,
+  //   navigation: {
+  //     nextEl: ".clients__swiper-button-next",
+  //     prevEl: ".clients__swiper-button-prev",
+  //   },
+  //   on: {
+  //     init: function () {
+  //       updateBlur(this)
+  //     },
+  //     slideChange: function () {
+  //       updateBlur(this)
+  //     },
+  //   },
+  // })
+
+  // function updateBlur(swiper) {
+  //   swiper.slides.forEach((slide) => slide.classList.add("blur")) // всі спочатку розмиті
+
+  //   // робимо чіткими тільки центральний та сусідні слайди
+  //   const visibleSlides = swiper.slides.filter(
+  //     (slide) =>
+  //       slide.classList.contains("swiper-slide-active") ||
+  //       slide.classList.contains("swiper-slide-prev") ||
+  //       slide.classList.contains("swiper-slide-next")
+  //   )
+
+  //   visibleSlides.forEach((slide) => slide.classList.remove("blur"))
+  // }
+  const swiper = new Swiper(".clients__swiper", {
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 20,
+    centeredSlides: true,
+    initialSlide: 2,
+    navigation: {
+      nextEl: ".clients__swiper-button-next",
+      prevEl: ".clients__swiper-button-prev",
+    },
+  })
 }
 //
 //===============================================
