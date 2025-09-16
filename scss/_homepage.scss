@@ -8,8 +8,14 @@
   // .hero__container
 
   &__container {
-    padding-top: toRem(199);
+    padding-top: toRem(103);
     overflow: hidden;
+    @media (max-width: toEm(991.98)) {
+      padding-top: toRem(60);
+    }
+    @media (max-width: toEm(767.98)) {
+      padding-top: toRem(40);
+    }
   }
 
   // .hero__row
@@ -214,11 +220,8 @@
   &__title {
     align-self: center;
     margin: toRem(72) 0 toRem(55) 0;
-    font-size: toRem(48);
-    font-family: "Integral CF", sans-serif;
-    font-weight: 700;
     @media (max-width: toEm(767.98)) {
-      font-size: toRem(32);
+      margin: toRem(50) 0 toRem(32) 0;
     }
   }
 
@@ -230,6 +233,13 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     row-gap: toRem(30);
     column-gap: toRem(20);
+
+    @media (max-width: toEm(767.98)) {
+      row-gap: toRem(20);
+      column-gap: toRem(16);
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      margin-bottom: toRem(24);
+    }
     @media (max-width: toEm(550)) {
       display: flex;
       justify-content: center;
@@ -252,6 +262,10 @@
         transition: color ease 0.3s;
         color: $hover-color;
       }
+    }
+    @media (max-width: toEm(767.98)) {
+      margin-bottom: toRem(40);
+      font-size: toRem(14);
     }
     @media (max-width: toEm(550)) {
       width: 100%;
@@ -285,8 +299,11 @@
   // .card-arrivals__title
 
   &__title {
-    font-size: toRem(16);
+    font-size: toRem(20);
     font-weight: 700;
+    @media (max-width: toEm(767.98)) {
+      font-size: toRem(16);
+    }
   }
 
   // .card-arrivals__rate
@@ -318,6 +335,9 @@
     &::before {
       font-size: toRem(18);
       color: #ffc633;
+      @media (max-width: toEm(767.98)) {
+        font-size: toRem(15);
+      }
     }
   }
 
@@ -327,6 +347,9 @@
     display: flex;
     align-items: center;
     font-size: toRem(14);
+    @media (max-width: toEm(767.98)) {
+      font-size: toRem(12);
+    }
   }
 
   // .rate-card-arrivals__number
@@ -345,11 +368,17 @@
   display: flex;
   align-items: center;
   column-gap: toRem(10);
+  @media (max-width: toEm(767.98)) {
+    column-gap: toRem(5);
+  }
   // .price-card-arrivals__price
 
   &__price {
     font-size: toRem(24);
     font-weight: 700;
+    @media (max-width: toEm(767.98)) {
+      font-size: toRem(20);
+    }
   }
 
   // .price-card-arrivals__old-price
@@ -359,6 +388,9 @@
     font-weight: 700;
     text-decoration: line-through;
     color: rgb(0, 0, 0, 0.4);
+    @media (max-width: toEm(767.98)) {
+      font-size: toRem(20);
+    }
   }
 
   // .price-card-arrivals__sale-percent
@@ -372,6 +404,9 @@
     border-radius: toRem(62);
     background-color: rgb(255, 51, 51, 0.1);
     flex: 0 0 toRem(58);
+    @media (max-width: toEm(767.98)) {
+      font-size: toRem(10);
+    }
   }
 }
 //==============================
@@ -393,11 +428,7 @@
   &__title {
     align-self: center;
     margin: toRem(72) 0 toRem(55) 0;
-    font-size: toRem(48);
-    font-family: "Integral CF", sans-serif;
-    font-weight: 700;
     @media (max-width: toEm(767.98)) {
-      font-size: toRem(32);
     }
   }
 
@@ -458,14 +489,10 @@
   // .styles__title
 
   &__title {
-    font-size: toRem(48);
     padding: 0 toRem(15);
-    font-family: "Integral CF", sans-serif;
-    font-weight: 700;
     text-align: center;
     margin-bottom: toRem(64);
     @media (max-width: toEm(767.98)) {
-      font-size: toRem(36);
     }
   }
 
@@ -527,9 +554,6 @@
   // .card-styles__title
 
   &__title {
-    // position: absolute;
-    top: toRem(25);
-    left: toRem(36);
     font-size: toRem(36);
     font-weight: 700;
     z-index: 2;
@@ -547,7 +571,6 @@
       object-position: 15px;
       object-fit: contain;
       transform: scale(1.7);
-      // position: absolute;
       @media (max-width: toEm(450)) {
         object-position: 0;
       }
@@ -556,22 +579,16 @@
 }
 //================================
 
-// .swiper {
-//   width: 600px;
-//   height: 300px;
-// }
 .clients {
-  // .clients__wrapper
-
-  &__wrapper {
-    // filter: blur(toRem(4));
-    overflow: hidden;
-  }
-
+  overflow: hidden;
   // .clients__container
 
   &__container {
-    padding: toRem(80) 0;
+    padding: toRem(80) toRem(15);
+    margin-bottom: toRem(80);
+    @media (max-width: toEm(767.98)) {
+      margin-bottom: toRem(50);
+    }
   }
 
   // .clients__top
@@ -622,10 +639,10 @@
   // .top-clients__title
 
   &__title {
-    font-size: toRem(48);
-    font-family: "Integral CF", sans-serif;
-    font-weight: 700;
     margin-bottom: toRem(40);
+    @media (max-width: toEm(767.98)) {
+      margin-bottom: toRem(24);
+    }
   }
 
   // .top-clients__arrows
@@ -646,6 +663,12 @@
     padding: toRem(28) toRem(32);
     border-radius: toRem(20);
     border: toRem(1) solid rgb(0, 0, 0, 0.1);
+    @media (max-width: toEm(767.98)) {
+      padding: toRem(24);
+    }
+    @media (max-width: toEm(500)) {
+      max-width: none;
+    }
   }
 
   // .response-clients__scores
@@ -658,6 +681,10 @@
     margin-bottom: toRem(15);
     & > ::before {
       color: #ffc633;
+    }
+    @media (max-width: toEm(767.98)) {
+      margin-bottom: toRem(12);
+      font-size: toRem(19);
     }
   }
 
@@ -679,6 +706,10 @@
       font-size: toRem(19);
       margin-bottom: toRem(-5);
     }
+    @media (max-width: toEm(767.98)) {
+      font-size: toRem(16);
+      margin-bottom: toRem(8);
+    }
   }
 
   // .response-clients__user-text
@@ -686,5 +717,9 @@
   &__user-text {
     line-height: 1.37; /* 22/16 */
     color: $light-color;
+    @media (max-width: toEm(767.98)) {
+      font-size: toRem(14);
+      line-height: 1.42; /* 20/14 */
+    }
   }
 }

@@ -137,13 +137,36 @@ function windowLoaded() {
   // }
   const swiper = new Swiper(".clients__swiper", {
     loop: true,
-    slidesPerView: 3,
-    spaceBetween: 20,
-    centeredSlides: true,
-    initialSlide: 2,
+    initialSlide: 1,
     navigation: {
       nextEl: ".clients__swiper-button-next",
       prevEl: ".clients__swiper-button-prev",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        centeredSlides: false,
+      },
+      500: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+        centeredSlides: false,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+        centeredSlides: true,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        centeredSlides: true,
+      },
+      1270: {
+        slidesPerView: 3,
+        centeredSlides: true,
+      },
     },
   })
 }

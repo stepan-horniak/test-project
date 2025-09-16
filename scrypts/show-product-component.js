@@ -104,9 +104,13 @@ class productsCard {
     }
   }
 }
-const productArrivals = new productsCard(productsArrivals, ".card-arrivals")
-productArrivals.render()
+if (document.querySelector(".card-arrivals")) {
+  const productArrivals = new productsCard(productsArrivals, ".card-arrivals")
+  productArrivals.render()
+}
 
 //================================================
-const productSelling = new productsCard(productsSelling, ".card-selling")
-productSelling.render()
+if (document.querySelector(".card-selling")) {
+  const productSelling = new productsCard(productsSelling, ".card-selling")
+  productSelling.render()
+}

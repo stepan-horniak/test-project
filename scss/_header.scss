@@ -53,13 +53,19 @@
 }
 //===============================
 header {
+  width: 100%;
+  min-height: toRem(135);
+  @media (max-width: toEm(767.98)) {
+    min-height: toRem(99);
+  }
+}
+.header {
   position: fixed;
   background-color: #ffffff;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 5;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 .header {
   // .header__wrapper
@@ -67,6 +73,9 @@ header {
   &__wrapper {
     padding: toRem(24) 0;
     position: relative;
+    @media (max-width: toEm(767.98)) {
+      padding: toRem(20) 0;
+    }
   }
 
   // .header__container
