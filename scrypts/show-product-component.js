@@ -114,3 +114,8 @@ if (document.querySelector(".card-selling")) {
   const productSelling = new productsCard(productsSelling, ".card-selling")
   productSelling.render()
 }
+//=========================================
+if (document.querySelector(".likes__products")) {
+  const productLikes = new productsCard(productslikes, ".likes__products")
+  productLikes.render()
+}

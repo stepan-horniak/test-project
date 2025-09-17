@@ -51,8 +51,78 @@ function windowLoaded() {
       productSelling.render(4, Infinity)
       document.querySelector(".selling__button-oll").remove()
     }
-    //====================================
+
+    //==========product-image-change========================
+
+    if (el.closest(".images-product__image")) {
+      const elements = document
+        .querySelectorAll(".images-product__image")
+        .forEach((el) => {
+          el.style.border = "none"
+        })
+      const imageBlock = el.closest(".images-product__image")
+      imageBlock.style.borderWidth = "1px"
+      imageBlock.style.borderStyle = "solid"
+      imageBlock.style.borderColor = "#000"
+
+      const element = el.closest(".images-product__image").cloneNode(false)
+
+      const containerImage = document.querySelector(
+        ".images-product__main-image"
+      )
+      containerImage.innerHTML = ""
+      element.style.border = "none"
+      containerImage.append(element)
+    }
+    //=================product-select-colors===================
+
+    if (el.closest(".colors-info-product__color")) {
+      document.querySelectorAll(".colors-info-product__color").forEach((el) => {
+        el.classList.remove("active")
+      })
+      const element = el.closest(".colors-info-product__color")
+      element.classList.add("active")
+    }
+    //=================product-select-size===================
+
+    if (el.closest(".size-info-product__button")) {
+      document.querySelectorAll(".size-info-product__button").forEach((el) => {
+        el.classList.remove("active")
+      })
+      const element = el.closest(".size-info-product__button")
+      element.classList.add("active")
+    }
+
+    //=================product-count===================
+
+    if (
+      el.closest(".count-add-info-product__minus") ||
+      el.closest(".count-add-info-product__plus")
+    ) {
+      let countElement = document.querySelector(
+        ".count-add-info-product__count"
+      )
+      let numberCount = parseInt(countElement.textContent)
+      if (el.closest(".count-add-info-product__minus") && numberCount > 1) {
+        numberCount -= 1
+      } else if (el.closest(".count-add-info-product__plus")) {
+        numberCount += 1
+      }
+      countElement.textContent = numberCount
+    }
+    //======================================================================
   }
+  //================page loads================
+  document.querySelector(".colors-info-product__color").classList.add("active")
+  //============================
+  document
+    .querySelectorAll(".size-info-product__button")
+    .forEach((el, index) => {
+      index === 2 ? el.classList.add("active") : null
+    })
+
+  //===============================================
+
   document.addEventListener("click", (e) => documentActions(e))
 
   //======================================================================
@@ -102,39 +172,7 @@ function windowLoaded() {
   window.addEventListener("resize", handleScreenChange)
 
   //====================================================================
-  // const swiper = new Swiper(".clients__swiper", {
-  //   loop: true,
-  //   slidesPerView: 3,
-  //   spaceBetween: 20,
-  //   centeredSlides: true,
-  //   initialSlide: 1,
-  //   navigation: {
-  //     nextEl: ".clients__swiper-button-next",
-  //     prevEl: ".clients__swiper-button-prev",
-  //   },
-  //   on: {
-  //     init: function () {
-  //       updateBlur(this)
-  //     },
-  //     slideChange: function () {
-  //       updateBlur(this)
-  //     },
-  //   },
-  // })
 
-  // function updateBlur(swiper) {
-  //   swiper.slides.forEach((slide) => slide.classList.add("blur")) // всі спочатку розмиті
-
-  //   // робимо чіткими тільки центральний та сусідні слайди
-  //   const visibleSlides = swiper.slides.filter(
-  //     (slide) =>
-  //       slide.classList.contains("swiper-slide-active") ||
-  //       slide.classList.contains("swiper-slide-prev") ||
-  //       slide.classList.contains("swiper-slide-next")
-  //   )
-
-  //   visibleSlides.forEach((slide) => slide.classList.remove("blur"))
-  // }
   const swiper = new Swiper(".clients__swiper", {
     loop: true,
     initialSlide: 1,
@@ -169,6 +207,6 @@ function windowLoaded() {
       },
     },
   })
+
+  //===============================================
 }
-//
-//===============================================

@@ -10,7 +10,7 @@
   <script defer src="./scrypts/data.js"></script>
   <script defer src="./scrypts/show-product-component.js"></script>
   <script defer src="./scrypts/scrypt.js"></script>
-  <title>clothes</title>
+  <title>product</title>
 </head>
 
 <body>
@@ -98,7 +98,7 @@
         </nav>
       </div>
     </div>
-    <div class="product">
+    <section class="product">
       <div class="product__container">
         <div class="product__row">
           <div class="product__images images-product">
@@ -155,9 +155,9 @@
             <div class="info-product__add add-info-product">
               <div class="add-info-product__row">
                 <div class="add-info-product__count count-add-info-product">
-                  <div class="count-add-info-product__minus">-</div>
+                  <button class="count-add-info-product__minus">-</button>
                   <div class="count-add-info-product__count">1</div>
-                  <div class="count-add-info-product__plus">+</div>
+                  <button class="count-add-info-product__plus">+</button>
                 </div>
                 <button class="add-info-product__button-add">Add to Cart</button>
 
@@ -166,7 +166,212 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    <section class="product-tabs">
+      <div class="product-tabs__container">
+        <div class="product-tabs__header header-tabs">
+          <div class="header-tabs__row">
+            <div class="header-tabs__title">Product Details</div>
+            <div class="header-tabs__title active">Rating & Reviews</div>
+            <div class="header-tabs__title">FAQs</div>
+          </div>
+        </div>
+        <div class="product-tabs__main main-product-tabs">
+          <div class="main-product-tabs__details details-tabs"></div>
+          <div class="main-product-tabs__reviews reviews-tabs">
+            <div class="reviews-tabs__header header-reviews-tabs">
+              <div class="header-reviews-tabs__title">
+                All Reviews
+                <div class="header-reviews-tabs__title-number">(451)</div>
+              </div>
+              <div class="header-reviews-tabs__filters filters-header-tabs">
+                <div class="filters-header-tabs__icon"><img src="./images/filter-icon.svg" alt="icon-filter"></div>
+                <div class="filters-header-tabs__latest _icon-h-more">Latest</div>
+                <button class="filters-header-tabs__button-write">Write a Review</button>
+              </div>
+            </div>
+            <div class="reviews-tabs__main main-reviews-tabs">
+              <div class="main-reviews-tabs__card card-main-tabs">
+                <div class="card-main-tabs__stars">
+                  <div class="card-main-tabs__stars-container">
+                    <div class="card-main-tabs__star _icon-star">
+                    </div>
+                    <div class="card-main-tabs__star-half _icon-star-half"></div>
+
+                  </div>
+
+                  <div class="card-main-tabs__more">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                  </div>
+                </div>
+                <div class="card-main-tabs__user-name _icon-check">Samantha D.</div>
+                <div class="card-main-tabs__user-text">"I absolutely love this t-shirt! The design is unique and the
+                  fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become
+                  my favorite go-to shirt."</div>
+                <div class="card-main-tabs__date">Posted on August 14, 2023</div>
+              </div>
+              <div class="main-reviews-tabs__card card-main-tabs">
+                <div class="card-main-tabs__stars">
+                  <div class="card-main-tabs__stars-container">
+                    <div class="card-main-tabs__star _icon-star">
+                    </div>
+                    <div class="card-main-tabs__star-half _icon-star-half"></div>
+
+                  </div>
+
+                  <div class="card-main-tabs__more">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                  </div>
+                </div>
+                <div class="card-main-tabs__user-name _icon-check">Samantha D.</div>
+                <div class="card-main-tabs__user-text">"I absolutely love this t-shirt! The design is unique and the
+                  fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become
+                  my favorite go-to shirt."</div>
+                <div class="card-main-tabs__date">Posted on August 14, 2023</div>
+              </div>
+              <div class="main-reviews-tabs__card card-main-tabs">
+                <div class="card-main-tabs__stars">
+                  <div class="card-main-tabs__stars-container">
+                    <div class="card-main-tabs__star _icon-star">
+                    </div>
+                    <div class="card-main-tabs__star-half _icon-star-half"></div>
+
+                  </div>
+
+                  <div class="card-main-tabs__more">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                  </div>
+                </div>
+                <div class="card-main-tabs__user-name _icon-check">Samantha D.</div>
+                <div class="card-main-tabs__user-text">"I absolutely love this t-shirt! The design is unique and the
+                  fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become
+                  my favorite go-to shirt."</div>
+                <div class="card-main-tabs__date">Posted on August 14, 2023</div>
+              </div>
+              <div class="main-reviews-tabs__card card-main-tabs">
+                <div class="card-main-tabs__stars">
+                  <div class="card-main-tabs__stars-container">
+                    <div class="card-main-tabs__star _icon-star">
+                    </div>
+                    <div class="card-main-tabs__star-half _icon-star-half"></div>
+
+                  </div>
+
+                  <div class="card-main-tabs__more">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                  </div>
+                </div>
+                <div class="card-main-tabs__user-name _icon-check">Samantha D.</div>
+                <div class="card-main-tabs__user-text">"I absolutely love this t-shirt! The design is unique and the
+                  fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become
+                  my favorite go-to shirt."</div>
+                <div class="card-main-tabs__date">Posted on August 14, 2023</div>
+              </div>
+              <div class="main-reviews-tabs__card card-main-tabs">
+                <div class="card-main-tabs__stars">
+                  <div class="card-main-tabs__stars-container">
+                    <div class="card-main-tabs__star _icon-star">
+                    </div>
+                    <div class="card-main-tabs__star-half _icon-star-half"></div>
+
+                  </div>
+
+                  <div class="card-main-tabs__more">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                  </div>
+                </div>
+                <div class="card-main-tabs__user-name _icon-check">Samantha D.</div>
+                <div class="card-main-tabs__user-text">"I absolutely love this t-shirt! The design is unique and the
+                  fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become
+                  my favorite go-to shirt."</div>
+                <div class="card-main-tabs__date">Posted on August 14, 2023</div>
+              </div>
+              <div class="main-reviews-tabs__card card-main-tabs">
+                <div class="card-main-tabs__stars">
+                  <div class="card-main-tabs__stars-container">
+                    <div class="card-main-tabs__star _icon-star">
+                    </div>
+                    <div class="card-main-tabs__star-half _icon-star-half"></div>
+
+                  </div>
+
+                  <div class="card-main-tabs__more">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                  </div>
+                </div>
+                <div class="card-main-tabs__user-name _icon-check">Samantha D.</div>
+                <div class="card-main-tabs__user-text">"I absolutely love this t-shirt! The design is unique and the
+                  fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become
+                  my favorite go-to shirt."</div>
+                <div class="card-main-tabs__date">Posted on August 14, 2023</div>
+              </div>
+              <div class="main-reviews-tabs__card card-main-tabs">
+                <div class="card-main-tabs__stars">
+                  <div class="card-main-tabs__stars-container">
+                    <div class="card-main-tabs__star _icon-star">
+                    </div>
+                    <div class="card-main-tabs__star-half _icon-star-half"></div>
+
+                  </div>
+
+                  <div class="card-main-tabs__more">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                  </div>
+                </div>
+                <div class="card-main-tabs__user-name _icon-check">Samantha D.</div>
+                <div class="card-main-tabs__user-text">"I absolutely love this t-shirt! The design is unique and the
+                  fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become
+                  my favorite go-to shirt."</div>
+                <div class="card-main-tabs__date">Posted on August 14, 2023</div>
+              </div>
+              <div class="main-reviews-tabs__card card-main-tabs">
+                <div class="card-main-tabs__stars">
+                  <div class="card-main-tabs__stars-container">
+                    <div class="card-main-tabs__star _icon-star">
+                    </div>
+                    <div class="card-main-tabs__star-half _icon-star-half"></div>
+
+                  </div>
+
+                  <div class="card-main-tabs__more">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                  </div>
+                </div>
+                <div class="card-main-tabs__user-name _icon-check">Samantha D.</div>
+                <div class="card-main-tabs__user-text">"I absolutely love this t-shirt! The design is unique and the
+                  fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become
+                  my favorite go-to shirt."</div>
+                <div class="card-main-tabs__date">Posted on August 14, 2023</div>
+              </div>
+            </div>
+            <button class="reviews-tabs__button-more">Load More Reviews</button>
+          </div>
+          <div class="main-product-tabs__info info-tabs"></div>
+        </div>
+      </div>
+    </section>
+    <section class="likes">
+      <div class="likes__container">
+        <div class="likes__title title">You might also like</div>
+        <div class="likes__products"></div>
+      </div>
+    </section>
   </main>
   <footer>
     <div class="footer__wrapper">

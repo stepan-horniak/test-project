@@ -264,3 +264,39 @@ const productsSelling = [
     salePercent: "-14%",
   },
 ]
+const productslikes = [
+  {
+    id: 1,
+    title: "KNIT SWEATER",
+    image: "/images/selling/image.png",
+    rating: 4.6,
+    price: 130,
+    oldPrice: 160,
+    salePercent: "-19%",
+  },
+  {
+    id: 2,
+    title: "DENIM JACKET",
+    image: "/images/selling/image.png",
+    rating: 5,
+    price: 280,
+    oldPrice: 320,
+    salePercent: "-13%",
+  },
+  {
+    id: 3,
+    title: "SPORTY LEGGINGS",
+    image: "/images/selling/image.png",
+    rating: 4.1,
+    price: 95,
+    oldPrice: 120,
+    salePercent: "-21%",
+  },
+  {
+    id: 4,
+    title: "BASIC POLO SHIRT",
+    image: "/images/selling/image.png",
+    rating: 3.9,
+    price: 70,
+  },
+]
