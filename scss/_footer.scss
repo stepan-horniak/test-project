@@ -8,10 +8,6 @@
   // .footer__container
 
   &__container {
-    margin-top: toRem(90);
-    @media (max-width: toEm(767.98)) {
-      margin-top: toRem(130);
-    }
   }
 
   // .footer__subscribe

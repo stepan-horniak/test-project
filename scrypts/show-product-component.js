@@ -1,4 +1,4 @@
-class productsCard {
+class ProductsCard {
   #cardWrapper
 
   constructor(data, containerClass) {
@@ -103,19 +103,4 @@ class productsCard {
       )
     }
   }
-}
-if (document.querySelector(".card-arrivals")) {
-  const productArrivals = new productsCard(productsArrivals, ".card-arrivals")
-  productArrivals.render()
-}
-
-//================================================
-if (document.querySelector(".card-selling")) {
-  const productSelling = new productsCard(productsSelling, ".card-selling")
-  productSelling.render()
-}
-//=========================================
-if (document.querySelector(".likes__products")) {
-  const productLikes = new productsCard(productslikes, ".likes__products")
-  productLikes.render()
 }

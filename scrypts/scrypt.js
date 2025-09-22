@@ -42,12 +42,22 @@ function windowLoaded() {
     //==========arrivals-show-more-products========================
 
     if (el.closest(".arrivals__button-oll")) {
+      const productArrivals = new ProductsCard(
+        productsArrivals,
+        ".card-arrivals"
+      )
+      productArrivals.render()
+
       productArrivals.render(4, Infinity)
       document.querySelector(".arrivals__button-oll").remove()
     }
+
     //==========selling-show-more-products========================
 
     if (el.closest(".selling__button-oll")) {
+      const productSelling = new ProductsCard(productsSelling, ".card-selling")
+      productSelling.render()
+
       productSelling.render(4, Infinity)
       document.querySelector(".selling__button-oll").remove()
     }
@@ -112,14 +122,37 @@ function windowLoaded() {
     }
     //======================================================================
   }
-  //================page loads================
-  document.querySelector(".colors-info-product__color").classList.add("active")
+  //================page loads=============================================
+  if (document.querySelector(".colors-info-product__color")) {
+    document
+      .querySelector(".colors-info-product__color")
+      .classList.add("active")
+  }
   //============================
-  document
-    .querySelectorAll(".size-info-product__button")
-    .forEach((el, index) => {
-      index === 2 ? el.classList.add("active") : null
-    })
+  if (document.querySelectorAll(".size-info-product__button")) {
+    document
+      .querySelectorAll(".size-info-product__button")
+      .forEach((el, index) => {
+        index === 2 ? el.classList.add("active") : null
+      })
+  }
+  //=================arrivals show product===========
+
+  if (document.querySelector(".card-arrivals")) {
+    const productArrivals = new ProductsCard(productsArrivals, ".card-arrivals")
+    productArrivals.render()
+  }
+
+  //=====================selling show product=======
+  if (document.querySelector(".card-selling")) {
+    const productSelling = new ProductsCard(productsSelling, ".card-selling")
+    productSelling.render()
+  }
+  //=====================likes show product========
+  if (document.querySelector(".likes__products")) {
+    const productLikes = new ProductsCard(productslikes, ".likes__products")
+    productLikes.render()
+  }
 
   //===============================================
 
@@ -165,6 +198,18 @@ function windowLoaded() {
         headerRowContainer.append(headerFavoriteContainer)
       }
     //========================================
+
+    function footerContainerMarginTop() {
+      const subscribeFooter = document.querySelector(
+        ".subscribe-footer__wrapper"
+      ).offsetHeight
+      const footerContainer = document.querySelector(
+        ".subscribe-footer__wrapper"
+      )
+      footerContainer.style.margin = `${subscribeFooter / 2}px 0 0 0`
+    }
+    footerContainerMarginTop()
+    //========================================
   }
 
   //========================
@@ -183,17 +228,17 @@ function windowLoaded() {
     breakpoints: {
       0: {
         slidesPerView: 1,
-        spaceBetween: 0,
+        spaceBetween: 15,
         centeredSlides: false,
       },
       500: {
         slidesPerView: 2,
-        spaceBetween: 10,
+        spaceBetween: 15,
         centeredSlides: false,
       },
       768: {
         slidesPerView: 3,
-        spaceBetween: 15,
+        spaceBetween: 20,
         centeredSlides: true,
       },
       992: {
