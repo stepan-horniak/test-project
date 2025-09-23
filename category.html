@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/style.css">
+
+  <link rel="stylesheet" href="./nouislider/nouislider.min.css">
+  <script src="./nouislider/nouislider.min.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script defer src="./scrypts/data.js"></script>
+  <script defer src="./scrypts/show-product-component.js"></script>
+  <script defer src="./scrypts/scrypt.js"></script>
+  <title>product</title>
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <div class="top-bar">
+        <div class="top-bar__wrappper">
+          <div class="top-bar__container">
+            <div class="top-bar__text">Sign up and get 20% off to your first order. <a href="#"
+                class="top-bar__link">Sign
+                Up Now</a></div>
+            <div class="top-bar__cross _icon-cross"></div>
+          </div>
+        </div>
+      </div>
+      <div class="header__wrapper">
+        <div class="header__container">
+          <div class="header__row">
+            <div class="header__burger burger-header">
+              <div class="burger-header__border"></div>
+              <div class="burger-header__border"></div>
+              <div class="burger-header__border"></div>
+
+            </div>
+            <div class="header__logo-text">SHOP.CO</div>
+            <nav class="header__nav nav-header">
+              <ul class="nav-header__list">
+                <li class="nav-header__item"><a href="#" class="nav-header__link _icon-h-more">Shop</a>
+                  <ul class="nav-header__sublist nav-header-sublist">
+                    <li class="nav-header-sublist__item">
+                      <a href="#" class="nav-header-sublist__link">BrandsBrandsBrandsBrands</a>
+                    </li>
+                    <li class="nav-header-sublist__item">
+                      <a href="#" class="nav-header-sublist__link">Brands</a>
+                    </li>
+                    <li class="nav-header-sublist__item">
+                      <a href="#" class="nav-header-sublist__link">Brands</a>
+                    </li>
+                    <li class="nav-header-sublist__item">
+                      <a href="#" class="nav-header-sublist__link">Brands</a>
+                    </li>
+                    <li class="nav-header-sublist__item">
+                      <a href="#" class="nav-header-sublist__link">Brands</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-header__item"><a href="#" class="nav-header__link">On Sale</a></li>
+                <li class="nav-header__item"><a href="#" class="nav-header__link">New Arrivals</a></li>
+                <li class="nav-header__item"><a href="#" class="nav-header__link">Brands</a></li>
+              </ul>
+            </nav>
+            <div class="header__search search-header">
+              <button class="search-header__button _icon-h-search"></button>
+              <input id="search" type="text" class="search-header__input" placeholder="Search for products...">
+
+              <label class="search-header__label" for="search"></label>
+            </div>
+            <div class="header__favorite favorite-header">
+              <button class="favorite-header__basket _icon-h-basked"></button>
+              <button class="favorite-header__user _icon-h-user"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </header>
+  <main>
+    <div class="pagination">
+      <div class="pagination__container">
+        <div class="pagination__border"></div>
+        <nav class="pagination__nav">
+          <ul class="pagination__list">
+            <li class="pagination__item">
+              <a class="pagination__link _icon-h-more" href="./index.html">home</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">Casual</a>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <aside class="aside">
+      <div class="aside__container">
+        <div class="aside__wrapper">
+          <div class="aside__row">
+            <div class="aside__filters-title aside-title _icon-filter">Filters
+            </div>
+            <div class="aside__border"></div>
+            <div class="aside__filters filters-aside">
+              <ul class="filters-aside__list">
+                <li class="filters-aside__item _icon-h-more">T-shirts</li>
+                <li class="filters-aside__item _icon-h-more">Shorts
+                </li>
+                <li class="filters-aside__item _icon-h-more">Shirts
+                </li>
+                <li class="filters-aside__item _icon-h-more">Hoodie
+                </li>
+                <li class="filters-aside__item _icon-h-more">Jeans
+                </li>
+              </ul>
+            </div>
+            <div class="aside__border"></div>
+
+            <div class="aside__price__title aside-title _icon-h-more">Price</div>
+            <div class="aside__range range-aside">
+              <div class="range-aside" id="slider-range">
+              </div>
+            </div>
+            <div class="aside__border"></div>
+
+            <div class="aside__colors-title aside-title _icon-h-more">Colors</div>
+            <div class="aside__colors colors-aside">
+              <div class="colors-aside__row">
+                <div class="colors-aside__color colors-aside__color--green"></div>
+                <div class="colors-aside__color colors-aside__color--red"></div>
+                <div class="colors-aside__color colors-aside__color--yellow"></div>
+                <div class="colors-aside__color colors-aside__color--orange"></div>
+                <div class="colors-aside__color colors-aside__color--light-blue"></div>
+                <div class="colors-aside__color colors-aside__color--blue"></div>
+                <div class="colors-aside__color colors-aside__color--purple"></div>
+                <div class="colors-aside__color colors-aside__color--pink"></div>
+                <div class="colors-aside__color colors-aside__color--white"></div>
+                <div class="colors-aside__color colors-aside__color--black"></div>
+
+              </div>
+            </div>
+            <div class="aside__border"></div>
+
+            <div class="aside__size-title aside-title _icon-h-more">Size</div>
+            <div class="aside__size size-aside">
+              <ul class="size-aside__list">
+                <li class="size-aside__item">XX-Small</li>
+                <li class="size-aside__item">X-Small</li>
+                <li class="size-aside__item">Small</li>
+                <li class="size-aside__item">Medium</li>
+                <li class="size-aside__item active">Large</li>
+                <li class="size-aside__item">X-Large</li>
+                <li class="size-aside__item">XX-Large</li>
+                <li class="size-aside__item">3X-Large</li>
+                <li class="size-aside__item">4X-Large</li>
+              </ul>
+            </div>
+            <div class="aside__border"></div>
+
+            <div class="aside__style-title aside-title _icon-h-more">Dress Style</div>
+            <div class="aside__style style-aside">
+              <ul class="style-aside__list">
+                <li class="style-aside__item _icon-h-more">Casual</li>
+                <li class="style-aside__item _icon-h-more">Formal</li>
+                <li class="style-aside__item _icon-h-more">Party</li>
+                <li class="style-aside__item _icon-h-more">Gym</li>
+              </ul>
+            </div>
+            <div class="aside__button-filter">Apply Filter</div>
+          </div>
+
+        </div>
+      </div>
+    </aside>
+  </main>
+  <footer>
+    <div class="footer__wrapper">
+      <div class="footer__container">
+        <div class="footer__subscribe subscribe-footer">
+          <div class="subscribe-footer__wrapper">
+            <div class="subscribe-footer__row">
+              <div class="subscribe-footer__title">STAY UPTO DATE ABOUT OUR LATEST OFFERS</div>
+              <div class="subscribe-footer__form">
+                <label for="email" class="subscribe-footer__form-label _icon-mail">
+                  <input id="email" type="email" class="subscribe-footer__form-input _icon-mail"
+                    placeholder="Enter your email address">
+                </label>
+                <button class="subscribe-footer__form-button">Subscribe to Newsletter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__main main-footer">
+
+          <div class="main-footer__info info-footer">
+            <div class="main-footer__social social-footer">
+              <div class="social-footer__title">SHOP.CO</div>
+              <div class="social-footer__text">We have clothes that suits your style and which you’re proud to wear.
+                From
+                women to men.</div>
+              <div class="social-footer__icons">
+                <a href="#" class="social-footer__icon _icon-s-twiter"></a>
+                <a href="#" class="social-footer__icon _icon-s-facebook"></a>
+                <a href="#" class="social-footer__icon _icon-s-instagram"></a>
+                <a href="#" class="social-footer__icon _icon-s-git"></a>
+              </div>
+            </div>
+            <div class="info-footer__block">
+              <div class="info-footer__title">Company</div>
+              <ul class="info-footer__list">
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">About</a>
+                </li>
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">Features</a>
+                </li>
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">Works</a>
+                </li>
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">Career</a>
+                </li>
+              </ul>
+            </div>
+            <div class="info-footer__block">
+              <div class="info-footer__title">Help</div>
+              <ul class="info-footer__list">
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">Customer Support
+                  </a>
+                </li>
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">Delivery Details
+                  </a>
+                </li>
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">Terms & Conditions
+                  </a>
+                </li>
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">Privacy Policy
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="info-footer__block">
+              <div class="info-footer__title">FAQ</div>
+              <ul class="info-footer__list">
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">Account</a>
+                </li>
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">Manage Deliveries
+                  </a>
+                </li>
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">Orders
+                  </a>
+                </li>
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">Payments
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="info-footer__block">
+              <div class="info-footer__title"> Resources
+              </div>
+              <ul class="info-footer__list">
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">Free eBooks
+                  </a>
+                </li>
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">Development Tutorial
+                  </a>
+                </li>
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">How to - Blog
+                  </a>
+                </li>
+                <li class="info-footer__item">
+                  <a href="#" class="info-footer__link">Youtube Playlist
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer__border-line"></div>
+        <div class="footer__bottom bottom-footer">
+          <div class="bottom-footer__row">
+            <div class="bottom-footer__info-text">Shop.co © 2000-2023, All Rights Reserved</div>
+            <div class="bottom-footer__cards">
+              <a href="#" class="bottom-footer__card"><img src="./images/footer-cards/visa.svg" alt="icon visa"></a>
+              <a href="#" class="bottom-footer__card"><img src="./images/footer-cards/mastercard.svg"
+                  alt="icon mastercard"></a>
+              <a href="#" class="bottom-footer__card"><img src="./images/footer-cards/paypal.svg"
+                  alt="icon pay pal"></a>
+              <a href="#" class="bottom-footer__card"><img src="./images/footer-cards/apple-pay.svg"
+                  alt="icon apple pay"></a>
+              <a href="#" class="bottom-footer__card"><img src="./images/footer-cards/g-pay.svg"
+                  alt="icon google pay"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

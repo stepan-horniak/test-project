@@ -21,10 +21,17 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+._icon-label:before {
+  content: "\e90f";
+}
+._icon-dump:before {
+  content: "\e910";
+}
+._icon-filter:before {
+  content: "\e90e";
+}
 ._icon-cross:before {
   content: "\e90d";
-  color: #fff;
 }
 ._icon-s-instagram:before {
   content: "\e900";

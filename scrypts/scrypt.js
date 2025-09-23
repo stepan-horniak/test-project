@@ -253,5 +253,27 @@ function windowLoaded() {
     },
   })
 
+  var slider = document.getElementById("slider-range")
+
+  noUiSlider.create(slider, {
+    start: [50, 200],
+    connect: true,
+    margin: 50,
+    range: {
+      min: 0,
+      max: 250,
+    },
+    tooltips: true,
+    decimals: 0,
+    format: {
+      to: function (value) {
+        return `$${parseInt(value)}`
+      },
+      from: function (value) {
+        return Number(value.replace("$", ""))
+      },
+    },
+  })
+
   //===============================================
 }
