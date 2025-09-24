@@ -120,6 +120,46 @@ function windowLoaded() {
       }
       countElement.textContent = numberCount
     }
+
+    //=================aside show hidden sub-menu===================
+
+    if (!el.closest(".aside__filters-title") && el.closest(".aside-title")) {
+      const currentElement = el.closest(".aside-title")
+      const nextElement = currentElement.nextElementSibling
+      currentElement.classList.toggle("active")
+      if (currentElement.classList.contains("active")) {
+        nextElement.style.transform = "translateY(-30%)"
+        nextElement.style.transitionDuration = "0.4s"
+        nextElement.style.opacity = "0"
+        nextElement.style.visibility = "hidden"
+        nextElement.style.position = "relative"
+        nextElement.style.zIndex = "-1"
+
+        setTimeout(() => {
+          nextElement.style.display = "none"
+        }, 300)
+      } else {
+        nextElement.style.display = "block"
+        setTimeout(() => {
+          nextElement.style.transform = "translateY(0)"
+          nextElement.style.transitionDuration = "0.3s"
+          nextElement.style.opacity = "1"
+          nextElement.style.visibility = "visible"
+        }, 10)
+      }
+    }
+
+    if (el.closest(".top-category__icon-filter")) {
+      const wrapperAside = document.querySelector(".aside__wrapper")
+      wrapperAside.classList.toggle("active")
+      document.body.style.overflow = "hidden"
+    }
+
+    if (window.innerWidth <= 767.98 && el.closest(".aside__filters-title")) {
+      const wrapperAside = document.querySelector(".aside__wrapper")
+      wrapperAside.classList.toggle("active")
+      document.body.style.overflow = "auto"
+    }
     //======================================================================
   }
   //================page loads=============================================
@@ -153,7 +193,14 @@ function windowLoaded() {
     const productLikes = new ProductsCard(productslikes, ".likes__products")
     productLikes.render()
   }
-
+  //=====================category show product========
+  if (document.querySelector(".products-category")) {
+    const productCategory = new ProductsCard(
+      productsArrivals,
+      ".products-category"
+    )
+    productCategory.render(0, 9)
+  }
   //===============================================
 
   document.addEventListener("click", (e) => documentActions(e))
@@ -218,62 +265,65 @@ function windowLoaded() {
 
   //====================================================================
 
-  const swiper = new Swiper(".clients__swiper", {
-    loop: true,
-    initialSlide: 1,
-    navigation: {
-      nextEl: ".clients__swiper-button-next",
-      prevEl: ".clients__swiper-button-prev",
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-        spaceBetween: 15,
-        centeredSlides: false,
+  if (document.querySelector(".clients__swiper")) {
+    const swiper = new Swiper(".clients__swiper", {
+      loop: true,
+      initialSlide: 1,
+      navigation: {
+        nextEl: ".clients__swiper-button-next",
+        prevEl: ".clients__swiper-button-prev",
       },
-      500: {
-        slidesPerView: 2,
-        spaceBetween: 15,
-        centeredSlides: false,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 15,
+          centeredSlides: false,
+        },
+        500: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+          centeredSlides: false,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+          centeredSlides: true,
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+          centeredSlides: true,
+        },
+        1270: {
+          slidesPerView: 3,
+          centeredSlides: true,
+        },
       },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        centeredSlides: true,
-      },
-      992: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        centeredSlides: true,
-      },
-      1270: {
-        slidesPerView: 3,
-        centeredSlides: true,
-      },
-    },
-  })
+    })
+  }
 
-  var slider = document.getElementById("slider-range")
+  if (document.getElementById("slider-range")) {
+    var slider = document.getElementById("slider-range")
 
-  noUiSlider.create(slider, {
-    start: [50, 200],
-    connect: true,
-    margin: 50,
-    range: {
-      min: 0,
-      max: 250,
-    },
-    tooltips: true,
-    decimals: 0,
-    format: {
-      to: function (value) {
-        return `$${parseInt(value)}`
+    noUiSlider.create(slider, {
+      start: [50, 200],
+      connect: true,
+      margin: 50,
+      range: {
+        min: 0,
+        max: 250,
       },
-      from: function (value) {
-        return Number(value.replace("$", ""))
+      tooltips: true,
+      decimals: 0,
+      format: {
+        to: function (value) {
+          return `$${parseInt(value)}`
+        },
+        from: function (value) {
+          return Number(value.replace("$", ""))
+        },
       },
-    },
-  })
-
+    })
+  }
   //===============================================
 }

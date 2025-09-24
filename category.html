@@ -5,17 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/style.css">
 
   <link rel="stylesheet" href="./nouislider/nouislider.min.css">
   <script src="./nouislider/nouislider.min.js"></script>
 
-  <script defer src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script defer src="./scrypts/data.js"></script>
   <script defer src="./scrypts/show-product-component.js"></script>
   <script defer src="./scrypts/scrypt.js"></script>
-  <title>product</title>
+  <title>category</title>
 </head>
 
 <body>
@@ -98,84 +96,136 @@
         </nav>
       </div>
     </div>
-    <aside class="aside">
-      <div class="aside__container">
-        <div class="aside__wrapper">
-          <div class="aside__row">
-            <div class="aside__filters-title aside-title _icon-filter">Filters
-            </div>
-            <div class="aside__border"></div>
-            <div class="aside__filters filters-aside">
-              <ul class="filters-aside__list">
-                <li class="filters-aside__item _icon-h-more">T-shirts</li>
-                <li class="filters-aside__item _icon-h-more">Shorts
-                </li>
-                <li class="filters-aside__item _icon-h-more">Shirts
-                </li>
-                <li class="filters-aside__item _icon-h-more">Hoodie
-                </li>
-                <li class="filters-aside__item _icon-h-more">Jeans
-                </li>
-              </ul>
-            </div>
-            <div class="aside__border"></div>
-
-            <div class="aside__price__title aside-title _icon-h-more">Price</div>
-            <div class="aside__range range-aside">
-              <div class="range-aside" id="slider-range">
+    <section class="category">
+      <div class="category__container">
+        <aside class="category-aside aside">
+          <div class="aside__wrapper">
+            <div class="aside__row">
+              <div class="aside__filters-title aside-title _icon-filter">Filters
               </div>
-            </div>
-            <div class="aside__border"></div>
+              <div class="aside__border"></div>
+              <div class="aside__filters filters-aside">
+                <ul class="filters-aside__list">
+                  <li class="filters-aside__item">
+                    <a href="#" class="filters-aside__link _icon-h-more">T-shirts</a>
 
-            <div class="aside__colors-title aside-title _icon-h-more">Colors</div>
-            <div class="aside__colors colors-aside">
-              <div class="colors-aside__row">
-                <div class="colors-aside__color colors-aside__color--green"></div>
-                <div class="colors-aside__color colors-aside__color--red"></div>
-                <div class="colors-aside__color colors-aside__color--yellow"></div>
-                <div class="colors-aside__color colors-aside__color--orange"></div>
-                <div class="colors-aside__color colors-aside__color--light-blue"></div>
-                <div class="colors-aside__color colors-aside__color--blue"></div>
-                <div class="colors-aside__color colors-aside__color--purple"></div>
-                <div class="colors-aside__color colors-aside__color--pink"></div>
-                <div class="colors-aside__color colors-aside__color--white"></div>
-                <div class="colors-aside__color colors-aside__color--black"></div>
+                  </li>
+                  <li class="filters-aside__item">
+                    <a href="#" class="filters-aside__link _icon-h-more">Shorts</a>
 
+                  </li>
+                  <li class="filters-aside__item">
+                    <a href="#" class="filters-aside__link _icon-h-more">Shirts</a>
+
+                  </li>
+                  <li class="filters-aside__item">
+                    <a href="#" class="filters-aside__link _icon-h-more">Hoodie</a>
+
+                  </li>
+                  <li class="filters-aside__item">
+                    <a href="#" class="filters-aside__link _icon-h-more">Jeans</a>
+
+                  </li>
+                </ul>
               </div>
-            </div>
-            <div class="aside__border"></div>
+              <div class="aside__border"></div>
 
-            <div class="aside__size-title aside-title _icon-h-more">Size</div>
-            <div class="aside__size size-aside">
-              <ul class="size-aside__list">
-                <li class="size-aside__item">XX-Small</li>
-                <li class="size-aside__item">X-Small</li>
-                <li class="size-aside__item">Small</li>
-                <li class="size-aside__item">Medium</li>
-                <li class="size-aside__item active">Large</li>
-                <li class="size-aside__item">X-Large</li>
-                <li class="size-aside__item">XX-Large</li>
-                <li class="size-aside__item">3X-Large</li>
-                <li class="size-aside__item">4X-Large</li>
-              </ul>
-            </div>
-            <div class="aside__border"></div>
+              <div class="aside__price__title aside-title _icon-h-more">Price</div>
+              <div class="aside__range range-aside">
+                <div class="range-aside" id="slider-range">
+                </div>
+              </div>
+              <div class="aside__border"></div>
 
-            <div class="aside__style-title aside-title _icon-h-more">Dress Style</div>
-            <div class="aside__style style-aside">
-              <ul class="style-aside__list">
-                <li class="style-aside__item _icon-h-more">Casual</li>
-                <li class="style-aside__item _icon-h-more">Formal</li>
-                <li class="style-aside__item _icon-h-more">Party</li>
-                <li class="style-aside__item _icon-h-more">Gym</li>
-              </ul>
+              <div class="aside__colors-title aside-title _icon-h-more">Colors</div>
+              <div class="aside__colors colors-aside">
+                <div class="colors-aside__row">
+                  <div class="colors-aside__color colors-aside__color--green"></div>
+                  <div class="colors-aside__color colors-aside__color--red"></div>
+                  <div class="colors-aside__color colors-aside__color--yellow"></div>
+                  <div class="colors-aside__color colors-aside__color--orange"></div>
+                  <div class="colors-aside__color colors-aside__color--light-blue"></div>
+                  <div class="colors-aside__color colors-aside__color--blue"></div>
+                  <div class="colors-aside__color colors-aside__color--purple"></div>
+                  <div class="colors-aside__color colors-aside__color--pink"></div>
+                  <div class="colors-aside__color colors-aside__color--white"></div>
+                  <div class="colors-aside__color colors-aside__color--black"></div>
+
+                </div>
+              </div>
+              <div class="aside__border"></div>
+
+              <div class="aside__size-title aside-title _icon-h-more">Size</div>
+              <div class="aside__size size-aside">
+                <ul class="size-aside__list">
+                  <li class="size-aside__item">XX-Small</li>
+                  <li class="size-aside__item">X-Small</li>
+                  <li class="size-aside__item">Small</li>
+                  <li class="size-aside__item">Medium</li>
+                  <li class="size-aside__item active">Large</li>
+                  <li class="size-aside__item">X-Large</li>
+                  <li class="size-aside__item">XX-Large</li>
+                  <li class="size-aside__item">3X-Large</li>
+                  <li class="size-aside__item">4X-Large</li>
+                </ul>
+              </div>
+              <div class="aside__border"></div>
+
+              <div class="aside__style-title aside-title _icon-h-more">Dress Style</div>
+              <div class="aside__style style-aside">
+                <ul class="style-aside__list">
+                  <li class="style-aside__item">
+                    <a href="#" class="style-aside__link _icon-h-more">Casual</a>
+                  </li>
+                  <li class="style-aside__item">
+                    <a href="#" class="style-aside__link _icon-h-more">Formal</a>
+                  </li>
+                  <li class="style-aside__item">
+                    <a href="#" class="style-aside__link _icon-h-more">Party</a>
+                  </li>
+                  <li class="style-aside__item">
+                    <a href="#" class="style-aside__link _icon-h-more">Gym</a>
+                  </li>
+                </ul>
+              </div>
+              <button class="aside__button-filter">Apply Filter</button>
             </div>
-            <div class="aside__button-filter">Apply Filter</div>
+
           </div>
+        </aside>
+        <div class="category__main main-category">
+          <div class="main-category__top top-category">
+            <h2 class="top-category__title">Casual</h2>
+            <div class="top-category__info">Showing 1-10 of 100 Products
+              <span class="top-category__info-more ">Sort by:<span class="_icon-h-more">Most Popular</span></span>
+            </div>
+            <div class="top-category__icon-filter _icon-filter"></div>
+          </div>
+          <div class="main-category__products products-category">
+          </div>
+          <div class="main-category__border"></div>
+          <div class="main-category__pagination pagination-category">
+            <div class="pagination-category__row">
+              <button
+                class="pagination-category__button pagination-category__button--prev _icon-arrow">Previous</button>
 
+              <div class="pagination-category__numbers numbers-pagination-category">
+                <button class="numbers-pagination-category__number">1</button>
+                <button class="numbers-pagination-category__number">2</button>
+                <button class="numbers-pagination-category__number">3</button>
+                <div class="numbers-pagination-category__number">...</div>
+                <button class="numbers-pagination-category__number">8</button>
+                <button class="numbers-pagination-category__number">9</button>
+                <button class="numbers-pagination-category__number">10</button>
+              </div>
+              <button class="pagination-category__button pagination-category__button--next _icon-arrow">Next</button>
+            </div>
+          </div>
         </div>
       </div>
-    </aside>
+
+    </section>
+
   </main>
   <footer>
     <div class="footer__wrapper">
