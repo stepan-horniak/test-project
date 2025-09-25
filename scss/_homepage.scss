@@ -271,6 +271,17 @@
   }
 }
 .card-arrivals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(toRem(250), 1fr));
+  gap: toRem(20);
+  @media (max-width: toEm(767.98)) {
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    & > * {
+      max-width: 200px;
+    }
+  }
 }
 
 //==============================
@@ -313,6 +324,9 @@
       overflow-x: auto;
       margin-bottom: toRem(24);
       gap: toRem(16);
+      & > * {
+        max-width: 200px;
+      }
     }
   }
 

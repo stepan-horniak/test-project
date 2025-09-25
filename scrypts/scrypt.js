@@ -64,7 +64,10 @@ function windowLoaded() {
 
     //==========product-image-change========================
 
-    if (el.closest(".images-product__image")) {
+    if (
+      !el.closest(".images-product__main-image") &&
+      el.closest(".images-product__image")
+    ) {
       const elements = document
         .querySelectorAll(".images-product__image")
         .forEach((el) => {
@@ -88,10 +91,10 @@ function windowLoaded() {
 
     if (el.closest(".colors-info-product__color")) {
       document.querySelectorAll(".colors-info-product__color").forEach((el) => {
-        el.classList.remove("active")
+        el.classList.remove("_icon-checkbox")
       })
       const element = el.closest(".colors-info-product__color")
-      element.classList.add("active")
+      element.classList.add("_icon-checkbox")
     }
     //=================product-select-size===================
 
@@ -120,7 +123,7 @@ function windowLoaded() {
       }
       countElement.textContent = numberCount
     }
-
+    //======================ASIDE===========================
     //=================aside show hidden sub-menu===================
 
     if (!el.closest(".aside__filters-title") && el.closest(".aside-title")) {
@@ -145,29 +148,107 @@ function windowLoaded() {
           nextElement.style.transitionDuration = "0.3s"
           nextElement.style.opacity = "1"
           nextElement.style.visibility = "visible"
+          nextElement.style.zIndex = "1"
         }, 10)
       }
     }
 
     if (el.closest(".top-category__icon-filter")) {
       const wrapperAside = document.querySelector(".aside__wrapper")
+      const aside = document.querySelector(".aside")
+
       wrapperAside.classList.toggle("active")
+      aside.classList.toggle("active")
+
       document.body.style.overflow = "hidden"
     }
 
     if (window.innerWidth <= 767.98 && el.closest(".aside__filters-title")) {
       const wrapperAside = document.querySelector(".aside__wrapper")
-      wrapperAside.classList.toggle("active")
+      const aside = document.querySelector(".aside")
       document.body.style.overflow = "auto"
+
+      wrapperAside.classList.remove("active")
+      aside.classList.remove("active")
     }
+
+    if (el.closest(".colors-aside__color")) {
+      const currentElementColor = el.closest(".colors-aside__color")
+      const allColors = document.querySelectorAll(".colors-aside__color")
+      allColors.forEach((el) => el.classList.remove("_icon-checkbox"))
+      currentElementColor.classList.add("_icon-checkbox")
+    }
+
+    if (el.closest(".size-aside__item")) {
+      const currentElementColor = el.closest(".size-aside__item")
+      const allColors = document.querySelectorAll(".size-aside__item")
+      allColors.forEach((el) => el.classList.remove("active"))
+      currentElementColor.classList.add("active")
+    }
+    //================category pagination next prev========================
+
+    if (
+      el.closest(".pagination-category__button--prev") ||
+      el.closest(".pagination-category__button--next")
+    ) {
+      const numbersPagination = document.querySelectorAll(
+        ".numbers-pagination-category__number"
+      )
+
+      // Масив для зручності роботи
+      const pages = Array.from(numbersPagination)
+
+      // Знаходимо індекс активного елемента
+      let indexElement = pages.findIndex((item) =>
+        item.classList.contains("active")
+      )
+
+      // ====== ФУНКЦІЯ ДЛЯ ВСТАНОВЛЕННЯ АКТИВНОГО ЕЛЕМЕНТА ======
+      function setActive(newIndex) {
+        pages.forEach((item) => item.classList.remove("active"))
+        pages[newIndex].classList.add("active")
+      }
+
+      // ====== КНОПКА PREV ======
+      if (
+        el.closest(".pagination-category__button--prev") &&
+        indexElement > 0
+      ) {
+        let newIndex = indexElement - 1
+
+        // Пропускаємо елементи з "..."
+        while (newIndex > 0 && pages[newIndex].textContent.trim() === "...") {
+          newIndex--
+        }
+
+        setActive(newIndex)
+      }
+
+      // ====== КНОПКА NEXT ======
+      if (
+        el.closest(".pagination-category__button--next") &&
+        indexElement < pages.length - 1
+      ) {
+        let newIndex = indexElement + 1
+
+        // Пропускаємо елементи з "..."
+        while (
+          newIndex < pages.length - 1 &&
+          pages[newIndex].textContent.trim() === "..."
+        ) {
+          newIndex++
+        }
+
+        setActive(newIndex)
+      }
+    }
+
     //======================================================================
   }
+  document.addEventListener("click", (e) => documentActions(e))
+
   //================page loads=============================================
-  if (document.querySelector(".colors-info-product__color")) {
-    document
-      .querySelector(".colors-info-product__color")
-      .classList.add("active")
-  }
+
   //============================
   if (document.querySelectorAll(".size-info-product__button")) {
     document
@@ -202,8 +283,6 @@ function windowLoaded() {
     productCategory.render(0, 9)
   }
   //===============================================
-
-  document.addEventListener("click", (e) => documentActions(e))
 
   //======================================================================
 

@@ -13,6 +13,18 @@
 //======================================
 
 .aside {
+  &.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  @media (max-width: toEm(767.98)) {
+    width: 0;
+  }
   // .aside__wrapper
 
   &__wrapper {
@@ -35,7 +47,7 @@
         transform: translateY(0);
         top: toRem(93);
         left: 0;
-        z-index: 5;
+        z-index: 11;
         width: 100%;
         height: calc(100vh - 93px);
         overflow-y: scroll;
@@ -132,12 +144,14 @@
   font-size: toRem(20);
   font-weight: 700;
   background-color: #ffffff;
+  cursor: pointer;
   &::before {
     transition: all 0.3s;
     font-size: toRem(6);
     margin-bottom: toRem(-5);
   }
   &:first-child {
+    cursor: auto;
     &::before {
       font-size: toRem(20);
       color: rgb(0, 0, 0, 0.4);
@@ -202,6 +216,17 @@
     height: toRem(37);
     border-radius: 50%;
     border: toRem(1) solid rgb(0, 0, 0, 0.2);
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      color: #ffffff;
+      font-size: toRem(10);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   // .colors-aside__color--green
@@ -220,6 +245,9 @@
 
   &__color--yellow {
     background-color: #f5dd06;
+    &::before {
+      color: #000;
+    }
   }
 
   // .colors-aside__color--orange
@@ -256,6 +284,9 @@
 
   &__color--white {
     background-color: #ffffff;
+    &::before {
+      color: #000;
+    }
   }
 
   // .colors-aside__color--black
@@ -282,6 +313,7 @@
     border-radius: toRem(62);
     font-size: toRem(14);
     color: $light-color;
+    cursor: pointer;
     &.active {
       background-color: #000000;
       color: #ffffff;
@@ -339,6 +371,8 @@
     height: toRem(20);
     border-radius: 50%;
     background-color: #000000;
+    cursor: pointer;
+
     border: none;
     box-shadow: none;
   }
@@ -492,6 +526,12 @@
   @media (max-width: toEm(991.98)) {
     row-gap: toRem(24);
     column-gap: toRem(14);
+    grid-template-columns: repeat(auto-fill, minmax(toRem(210), 1fr));
+  }
+  @media (max-width: toEm(500)) {
+    row-gap: toRem(18);
+    column-gap: toRem(10);
+    grid-template-columns: repeat(auto-fill, minmax(toRem(150), 1fr));
   }
 }
 .pagination-category {
@@ -502,6 +542,9 @@
     align-items: center;
     justify-content: space-between;
     gap: toRem(15);
+    @media (max-width: toEm(450)) {
+      gap: toRem(8);
+    }
   }
 
   // .pagination-category__button
@@ -517,6 +560,12 @@
     &::before {
       font-size: toRem(12);
       margin-top: toRem(3);
+    }
+    @media (max-width: toEm(450)) {
+      gap: toRem(8);
+    }
+    @media (max-width: toEm(390)) {
+      padding: toRem(6);
     }
   }
 
@@ -553,7 +602,7 @@
     height: toRem(40);
     font-size: toRem(14);
     color: rgb(0, 0, 0, 0.5);
-    &:nth-child(1) {
+    &.active {
       background-color: rgb(0, 0, 0, 0.06);
     }
     @media (max-width: toEm(850)) {
@@ -566,6 +615,17 @@
       font-size: toRem(12);
       width: toRem(36);
       height: toRem(36);
+    }
+    @media (max-width: toEm(450)) {
+      width: toRem(30);
+      height: toRem(30);
+    }
+    @media (max-width: toEm(390)) {
+      &:nth-child(6) {
+        display: none;
+      }
+      width: toRem(25);
+      height: toRem(25);
     }
   }
 }

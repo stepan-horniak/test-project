@@ -357,39 +357,27 @@
     width: toRem(37);
     height: toRem(37);
     border-radius: 50%;
+    position: relative;
+
     cursor: pointer;
     &:nth-child(1) {
       background-color: #4f4631;
-      position: relative;
-    }
-    &.active::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background-image: url(../images/product/flag.svg);
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      width: toRem(13);
-      height: toRem(9);
-
-      @media (max-width: toEm(767.98)) {
-        width: toRem(14);
-        height: toRem(10);
-      }
     }
     &:nth-child(2) {
       background-color: #314f4a;
-      position: relative;
     }
     &:nth-child(3) {
-      position: relative;
-
       background-color: #31344f;
     }
 
+    &::before {
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: toRem(10);
+    }
     @media (max-width: toEm(767.98)) {
       width: toRem(39);
       height: toRem(39);

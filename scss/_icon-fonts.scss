@@ -21,6 +21,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+._icon-checkbox:before {
+  content: "\e911";
+}
 ._icon-label:before {
   content: "\e90f";
 }

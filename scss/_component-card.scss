@@ -7,12 +7,6 @@
     row-gap: toRem(8);
     max-width: toRem(298);
     flex: 0 0 auto;
-    // @media (max-width: toEm(767.98)) {
-    //   &:last-child {
-    //     margin-right: toRem(15);
-    //   }
-    //   max-width: toRem(200);
-    // }
   }
 
   // .card__image
@@ -63,6 +57,9 @@
     display: flex;
     align-items: center;
     column-gap: toRem(5);
+    @media (max-width: toEm(400)) {
+      column-gap: toRem(2);
+    }
   }
 
   // .rate-card__star
@@ -103,9 +100,10 @@
 .price-card {
   display: flex;
   align-items: center;
-  column-gap: toRem(10);
+  flex-wrap: wrap;
+  gap: toRem(10);
   @media (max-width: toEm(767.98)) {
-    column-gap: toRem(5);
+    gap: toRem(5);
   }
   // .price-card__price
 
