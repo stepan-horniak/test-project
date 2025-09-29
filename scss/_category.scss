@@ -3,6 +3,7 @@
 
   &__container {
     margin-bottom: toRem(80);
+    height: auto;
     @media (max-width: toEm(767.98)) {
       margin-bottom: 50;
     }
@@ -40,14 +41,17 @@
     @media (max-width: toEm(767.98)) {
       transform: translateY(-150%);
       width: 0;
-
+      height: 0;
+      opacity: 0;
       transition: transform 0.3s width 0.3s;
       &.active {
+        // height: auto;
         transition: transform 0.3s;
         transform: translateY(0);
         top: toRem(93);
         left: 0;
         z-index: 11;
+        opacity: 1;
         width: 100%;
         height: calc(100vh - 93px);
         overflow-y: scroll;
@@ -313,11 +317,11 @@
     border-radius: toRem(62);
     font-size: toRem(14);
     color: $light-color;
+    font-weight: 500;
     cursor: pointer;
     &.active {
       background-color: #000000;
       color: #ffffff;
-      font-weight: 500;
     }
   }
 }
