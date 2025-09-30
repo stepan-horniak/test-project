@@ -39,6 +39,7 @@ function windowLoaded() {
     if (el.closest(".top-bar__cross")) {
       document.querySelector(".top-bar").style.display = "none"
     }
+
     //==========arrivals-show-more-products========================
 
     if (el.closest(".arrivals__button-oll")) {
@@ -61,7 +62,6 @@ function windowLoaded() {
       productSelling.render(4, Infinity)
       document.querySelector(".selling__button-oll").remove()
     }
-
     //==========product-image-change========================
 
     if (
@@ -242,12 +242,47 @@ function windowLoaded() {
         setActive(newIndex)
       }
     }
+    //=======================CART===================================
+    //=======================cart-count=================
+    if (
+      el.closest(".add-block-cart__minus") ||
+      el.closest(".add-block-cart__plus")
+    ) {
+      let countElement = document.querySelector(".add-block-cart__span")
+      let numberCount = parseInt(countElement.textContent)
+      if (el.closest(".add-block-cart__minus") && numberCount > 1) {
+        numberCount -= 1
+      } else if (el.closest(".add-block-cart__plus")) {
+        numberCount += 1
+      }
+      countElement.textContent = numberCount
+    }
+    //=======================cart delete element=================
+    if (el.closest(".add-block-cart__icon-delete")) {
+      const parrentElement = el.closest(".block-cart")
+      const nextEl = parrentElement.nextElementSibling
+      if (nextEl && nextEl.classList.contains("cart__products-border")) {
+        parrentElement.nextElementSibling.remove()
+      }
+      parrentElement.remove()
+    }
 
+    //======================= CLICK PRODUCT CARD =======================
+    if (el.closest(".card__card")) {
+      const idElement = el.closest(".card__card").getAttribute("id")
+      window.location.href = `/product.html?id=${idElement}`
+    }
     //======================================================================
   }
   document.addEventListener("click", (e) => documentActions(e))
 
-  //================page loads=============================================
+  //================ PAGE LOADED =============================================
+
+  const urlParams = new URLSearchParams(window.location.search)
+  const productId = urlParams.get("id")
+  if (productId) {
+    console.log(productId)
+  }
 
   //============================
   if (document.querySelectorAll(".size-info-product__button")) {
@@ -271,13 +306,14 @@ function windowLoaded() {
   }
   //=====================likes show product========
   if (document.querySelector(".likes__products")) {
-    const productLikes = new ProductsCard(productslikes, ".likes__products")
+    const productLikes = new ProductsCard(productsLikes, ".likes__products")
     productLikes.render()
   }
+
   //=====================category show product========
   if (document.querySelector(".products-category")) {
     const productCategory = new ProductsCard(
-      productsArrivals,
+      productsCategory,
       ".products-category"
     )
     productCategory.render(0, 9)

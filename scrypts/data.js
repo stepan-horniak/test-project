@@ -176,9 +176,10 @@ const productsArrivals = [
     salePercent: "-21%",
   },
 ]
+
 const productsSelling = [
   {
-    id: 1,
+    id: 21,
     title: "KNIT SWEATER",
     image: "/images/selling/image.png",
     rating: 4.6,
@@ -187,7 +188,7 @@ const productsSelling = [
     salePercent: "-19%",
   },
   {
-    id: 2,
+    id: 22,
     title: "DENIM JACKET",
     image: "/images/selling/image.png",
     rating: 5,
@@ -196,7 +197,7 @@ const productsSelling = [
     salePercent: "-13%",
   },
   {
-    id: 3,
+    id: 23,
     title: "SPORTY LEGGINGS",
     image: "/images/selling/image.png",
     rating: 4.1,
@@ -205,14 +206,14 @@ const productsSelling = [
     salePercent: "-21%",
   },
   {
-    id: 4,
+    id: 24,
     title: "BASIC POLO SHIRT",
     image: "/images/selling/image.png",
     rating: 3.9,
     price: 70,
   },
   {
-    id: 5,
+    id: 25,
     title: "FLORAL DRESS",
     image: "/images/selling/image.png",
     rating: 4.5,
@@ -221,7 +222,7 @@ const productsSelling = [
     salePercent: "-17%",
   },
   {
-    id: 6,
+    id: 26,
     title: "RUNNING SNEAKERS",
     image: "/images/selling/image.png",
     rating: 4.8,
@@ -230,14 +231,14 @@ const productsSelling = [
     salePercent: "-15%",
   },
   {
-    id: 7,
+    id: 27,
     title: "LEATHER BELT",
     image: "/images/selling/image.png",
     rating: 4.3,
     price: 45,
   },
   {
-    id: 8,
+    id: 28,
     title: "BASEBALL CAP",
     image: "/images/selling/image.png",
     rating: 3.7,
@@ -246,7 +247,7 @@ const productsSelling = [
     salePercent: "-30%",
   },
   {
-    id: 9,
+    id: 29,
     title: "COTTON SHIRT",
     image: "/images/selling/image.png",
     rating: 4.2,
@@ -255,7 +256,7 @@ const productsSelling = [
     salePercent: "-15%",
   },
   {
-    id: 10,
+    id: 30,
     title: "SLIM FIT TROUSERS",
     image: "/images/selling/image.png",
     rating: 4.9,
@@ -264,9 +265,10 @@ const productsSelling = [
     salePercent: "-14%",
   },
 ]
-const productslikes = [
+
+const productsLikes = [
   {
-    id: 1,
+    id: 31,
     title: "KNIT SWEATER",
     image: "/images/selling/image.png",
     rating: 4.6,
@@ -275,7 +277,7 @@ const productslikes = [
     salePercent: "-19%",
   },
   {
-    id: 2,
+    id: 32,
     title: "DENIM JACKET",
     image: "/images/selling/image.png",
     rating: 5,
@@ -284,7 +286,7 @@ const productslikes = [
     salePercent: "-13%",
   },
   {
-    id: 3,
+    id: 33,
     title: "SPORTY LEGGINGS",
     image: "/images/selling/image.png",
     rating: 4.1,
@@ -293,10 +295,117 @@ const productslikes = [
     salePercent: "-21%",
   },
   {
-    id: 4,
+    id: 34,
     title: "BASIC POLO SHIRT",
     image: "/images/selling/image.png",
     rating: 3.9,
     price: 70,
+  },
+]
+
+const productsCategory = [
+  {
+    id: 35,
+    title: "T-SHIRT WITH TAPE DETAILS",
+    image: "/images/category/image-1.png",
+    rating: 4.5,
+    price: 120,
+  },
+  {
+    id: 36,
+    title: "HOODED SWEATSHIRT",
+    image: "/images/category/image-2.png",
+    rating: 5,
+    price: 200,
+    oldPrice: 250,
+    salePercent: "-20%",
+  },
+  {
+    id: 37,
+    title: "SPORTS SHOES",
+    image: "/images/category/image-3.png",
+    rating: 3.5,
+    price: 180,
+    oldPrice: 220,
+    salePercent: "-18%",
+  },
+  {
+    id: 38,
+    title: "CLASSIC JEANS",
+    image: "/images/category/image-4.png",
+    rating: 4,
+    price: 140,
+  },
+  {
+    id: 39,
+    title: "SUMMER SHORTS",
+    image: "/images/category/image-5.png",
+    rating: 4.2,
+    price: 90,
+    oldPrice: 120,
+    salePercent: "-25%",
+  },
+  {
+    id: 40,
+    title: "COTTON T-SHIRT",
+    image: "/images/category/image-6.png",
+    rating: 4.8,
+    price: 110,
+    oldPrice: 130,
+    salePercent: "-15%",
+  },
+  {
+    id: 41,
+    title: "LEATHER JACKET",
+    image: "/images/category/image-7.png",
+    rating: 5,
+    price: 350,
+    oldPrice: 400,
+    salePercent: "-12%",
+  },
+  {
+    id: 42,
+    title: "CAP WITH LOGO",
+    image: "/images/category/image-8.png",
+    rating: 3.8,
+    price: 50,
+    oldPrice: 65,
+    salePercent: "-23%",
+  },
+  {
+    id: 43,
+    title: "DENIM SKIRT",
+    image: "/images/category/image-9.png",
+    rating: 4.3,
+    price: 130,
+    oldPrice: 160,
+    salePercent: "-19%",
+  },
+  {
+    id: 44,
+    title: "SNEAKERS CLASSIC",
+    image: "/images/category/image-10.png",
+    rating: 4.7,
+    price: 210,
+    oldPrice: 250,
+    salePercent: "-16%",
+  },
+  {
+    id: 45,
+    title: "TRACKSUIT",
+    image: "/images/category/image-11.png",
+    rating: 4.6,
+    price: 240,
+    oldPrice: 300,
+    salePercent: "-20%",
+  },
+  {
+    id: 46,
+    title: "LEATHER BELT",
+    image: "/images/category/image-12.png",
+    rating: 4.4,
+    price: 80,
+    oldPrice: 95,
+    salePercent: "-15%",
   },
 ]

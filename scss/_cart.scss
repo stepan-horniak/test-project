@@ -31,7 +31,7 @@
       padding: toRem(20) toRem(24);
     }
 
-    @media (max-width: toEm(991.98)) {
+    @media (max-width: toEm(767.98)) {
       flex-direction: column;
     }
   }
@@ -48,6 +48,7 @@
     @media (max-width: toEm(767.98)) {
       gap: toRem(16);
       padding: toRem(14);
+      max-height: fit-content;
     }
   }
   // .cart__products-border
@@ -61,6 +62,8 @@
 
   &__summary {
     flex-basis: toRem(505);
+    max-height: fit-content;
+    min-width: toRem(370);
   }
 }
 .block-cart {
@@ -426,6 +429,13 @@
 
     &::before {
       font-size: toRem(20);
+    }
+    @media (max-width: toEm(991.98)) {
+      left: toRem(22);
+    }
+    @media (max-width: toEm(767.98)) {
+      gap: toRem(5);
+      left: toRem(15);
     }
   }
 

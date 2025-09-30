@@ -16,6 +16,8 @@
     background-color: #f0eeed;
     border-radius: toRem(20);
     overflow: hidden;
+    aspect-ratio: 295 / 298;
+
     & > img {
       width: 100%;
       object-fit: cover;

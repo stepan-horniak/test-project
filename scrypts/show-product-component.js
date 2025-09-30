@@ -6,9 +6,11 @@ class ProductsCard {
     this.container = document.querySelector(containerClass)
   }
 
-  createCard() {
+  createCard(id) {
     this.#cardWrapper = document.createElement("a")
     this.#cardWrapper.setAttribute("href", "#")
+    this.#cardWrapper.setAttribute("id", id)
+
     this.#cardWrapper.classList.add("card__card")
     return this.#cardWrapper
   }
@@ -91,7 +93,7 @@ class ProductsCard {
 
   render(startShow = 0, showElements = 4) {
     for (let i = startShow; i < showElements && i < this.data.length; i++) {
-      this.container.append(this.createCard())
+      this.container.append(this.createCard(this.data[i].id))
       this.#cardWrapper.append(this.createImage(this.data[i].image))
       this.#cardWrapper.append(this.createTitle(this.data[i].title))
       this.#cardWrapper.append(this.createRates(this.data[i].rating))

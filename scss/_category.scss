@@ -527,6 +527,7 @@
   grid-template-columns: repeat(auto-fill, minmax(toRem(230), 1fr));
   row-gap: toRem(36);
   column-gap: toRem(20);
+  align-items: stretch;
   @media (max-width: toEm(991.98)) {
     row-gap: toRem(24);
     column-gap: toRem(14);
