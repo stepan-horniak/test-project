@@ -94,7 +94,7 @@ class ProductsCard {
   render(startShow = 0, showElements = 4) {
     for (let i = startShow; i < showElements && i < this.data.length; i++) {
       this.container.append(this.createCard(this.data[i].id))
-      this.#cardWrapper.append(this.createImage(this.data[i].image))
+      this.#cardWrapper.append(this.createImage(this.data[i].images))
       this.#cardWrapper.append(this.createTitle(this.data[i].title))
       this.#cardWrapper.append(this.createRates(this.data[i].rating))
       this.#cardWrapper.append(

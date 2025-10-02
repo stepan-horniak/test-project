@@ -123,6 +123,23 @@ function windowLoaded() {
       }
       countElement.textContent = numberCount
     }
+    if (el.closest(".add-info-product__button-add")) {
+      const productEl = el.closest(".product__container")
+      if (productEl) {
+        const idEl = productEl.getAttribute("id")
+
+        // Отримуємо існуючий масив з localStorage або створюємо новий
+        const savedIds = JSON.parse(localStorage.getItem("cartIds")) || []
+
+        // Додаємо новий id
+        savedIds.push(idEl)
+
+        console.log(idEl)
+
+        // Зберігаємо назад
+        localStorage.setItem("cartIds", JSON.stringify(savedIds))
+      }
+    }
     //======================ASIDE===========================
     //=================aside show hidden sub-menu===================
 
@@ -242,6 +259,17 @@ function windowLoaded() {
         setActive(newIndex)
       }
     }
+    if (
+      el.closest(".numbers-pagination-category__number") &&
+      !el.closest(".numbers-pagination-category__number-ellipsis")
+    ) {
+      const currentEl = el.closest(".numbers-pagination-category__number")
+      const ollButtons = document.querySelectorAll(
+        ".numbers-pagination-category__number"
+      )
+      ollButtons.forEach((el) => el.classList.remove("active"))
+      currentEl.classList.add("active")
+    }
     //=======================CART===================================
     //=======================cart-count=================
     if (
@@ -281,7 +309,18 @@ function windowLoaded() {
   const urlParams = new URLSearchParams(window.location.search)
   const productId = urlParams.get("id")
   if (productId) {
-    console.log(productId)
+    const ollArr = [
+      productsArrivals,
+      productsSelling,
+      productsLikes,
+      productsCategory,
+    ].flat()
+    const element = ollArr.find((el) => {
+      return el.id === parseInt(productId)
+    })
+
+    const productElement = new ProductComponentElement(".product", element)
+    productElement.render()
   }
 
   //============================

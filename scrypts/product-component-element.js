@@ -1,27 +1,35 @@
-//  id: 35,
-//     title: "T-SHIRT WITH TAPE DETAILS",
-//     image: "/images/category/image-1.png",
-//     rating: 4.5,
-//     price: 120,
+const prod = [
+  {
+    id: 35,
+    title: "T-SHIRT WITH TAPE DETAILS",
+    image: [
+      "/images/category/image-1.png",
+      // "/images/category/image-2.png",
+      // "/images/category/image-3.png",
+      // "/images/category/image-4.png",
+    ],
+    text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quas ad accusantium optio, quis expedita consequuntur enim in voluptates laborum. Quos exercitationem aliquid delectus aperiam fuga ",
+    rating: 4.5,
+    price: 120,
+    oldPrice: 160,
+    salePercent: "-19%",
+  },
+]
 
-//product -section
 class ProductComponentElement {
   constructor(wrapper, data) {
     this.wrapper = document.querySelector(wrapper)
     this.data = data
   }
 
-  createContainer() {
-    const container = document.createElement("div")
-    container.classList.add("product__container")
-    return container
+  createElement(tad, classNameArr) {
+    const element = document.createElement(tad)
+    classNameArr.forEach((className) => {
+      element.classList.add(className)
+    })
+    return element
   }
-  createRow() {
-    const row = document.createElement("div")
-    row.classList.add("product__row")
-    return row
-  }
-  createImageContainer(arrUrl = "/images/category/image-1.png") {
+  createImageContainer(arrUrl) {
     const imageWrapper = document.createElement("div")
     imageWrapper.classList.add("product__images", "images-product")
 
@@ -42,88 +50,163 @@ class ProductComponentElement {
     mainImage.setAttribute("src", arrUrl[arrUrl.length - 1])
     mainImage.setAttribute("alt", "product-image")
     mainImage.classList.add("images-product__image")
-    mainImageWrapper.append(mainImageWrapper)
+    mainImageWrapper.append(mainImage)
 
+    imageGrid.append(mainImageWrapper)
     imageWrapper.append(imageGrid)
 
     return imageWrapper
   }
 
+  createScoresContainer(rating) {
+    const scoresContainer = this.createElement("div", [
+      "info-product__scores",
+      "scores-info-product",
+    ])
+
+    const starsEl = this.createElement("div", ["scores-info-product__stars"])
+
+    for (let i = 1; i < rating; i++) {
+      const star = this.createElement("div", [
+        "scores-info-product__star",
+        "_icon-star",
+      ])
+      starsEl.append(star)
+    }
+    if (rating % 1 !== 0) {
+      const starHalf = this.createElement("div", [
+        "scores-info-product__star",
+        "_icon-star-half",
+      ])
+      starsEl.append(starHalf)
+    }
+
+    scoresContainer.append(starsEl)
+
+    const scoresEl = this.createElement("div", ["scores-info-product__scores"])
+    const scoresText = this.createElement("div", ["scores-info-product__score"])
+    scoresText.textContent = `${rating}/`
+    const scoresTextMax = this.createElement("div", [
+      "scores-info-product__score",
+    ])
+    scoresTextMax.textContent = 5
+    scoresEl.append(scoresText)
+    scoresEl.append(scoresTextMax)
+
+    scoresContainer.append(scoresEl)
+
+    return scoresContainer
+  }
+
+  createPriceContainer(price, oldPrice, salePercent) {
+    const priceContainer = this.createElement("div", [
+      "info-product__price",
+      "price-info-product",
+    ])
+
+    const priceEl = this.createElement("div", ["price-info-product__price"])
+    priceEl.textContent = `$${price}`
+    priceContainer.append(priceEl)
+
+    if (oldPrice) {
+      const oldPriceEl = this.createElement("div", [
+        "price-info-product__price-half",
+      ])
+      oldPriceEl.textContent = `$${oldPrice}`
+      priceContainer.append(oldPriceEl)
+    }
+
+    if (salePercent) {
+      const salePercentEl = this.createElement("div", [
+        "price-info-product__sale-percent",
+      ])
+      salePercentEl.textContent = `${salePercent}`
+      priceContainer.append(salePercentEl)
+    }
+
+    return priceContainer
+  }
+
+  createInfoContainer(
+    title,
+    price,
+    oldPrice,
+    salePercent,
+    rating,
+    infoProductText = ""
+  ) {
+    const infoEl = this.createElement("div", ["product__info", "info-product"])
+    const titleEl = this.createElement("h6", ["info-product__title"])
+    titleEl.textContent = title
+    infoEl.append(titleEl)
+
+    infoEl.append(this.createScoresContainer(rating))
+    infoEl.append(this.createPriceContainer(price, oldPrice, salePercent))
+
+    const infoTextEl = this.createElement("div", ["info-product__info-text"])
+    infoTextEl.textContent = infoProductText
+    infoEl.append(infoTextEl)
+
+    const borderEl = this.createElement("div", ["info-product__border"])
+    infoEl.append(borderEl)
+
+    const infoHtml = `<div class="info-product__colors colors-info-product">
+              <div class="colors-info-product__title">Select Colors</div>
+              <div class="colors-info-product__colors">
+                <div class="colors-info-product__color _icon-checkbox"></div>
+                <div class="colors-info-product__color"></div>
+                <div class="colors-info-product__color"></div>
+              </div>
+            </div>
+              <div class="info-product__border"></div>
+            <div class="info-product__size size-info-product">
+              <div class="size-info-product__title">Choose Size</div>
+              <div class="size-info-product__buttons">
+                <button class="size-info-product__button">Small</button>
+                <button class="size-info-product__button">Medium</button>
+                <button class="size-info-product__button">Large</button>
+                <button class="size-info-product__button">X-Large</button>
+              </div>
+            </div>
+              <div class="info-product__border"></div>
+            <div class="info-product__add add-info-product">
+              <div class="add-info-product__row">
+                <div class="add-info-product__count count-add-info-product">
+                  <button class="count-add-info-product__minus">-</button>
+                  <div class="count-add-info-product__count">1</div>
+                  <button class="count-add-info-product__plus">+</button>
+                </div>
+                <button class="add-info-product__button-add">Add to Cart</button>
+
+              </div>
+            </div>`
+
+    infoEl.insertAdjacentHTML("beforeend", infoHtml)
+    return infoEl
+  }
+
   render() {
-    // this.wrapper.children.remove()
-    const container = this.createContainer()
-    const row = this.createRow()
+    const container = this.createElement("div", ["product__container"])
+    container.setAttribute("id", this.data.id)
+    const row = this.createElement("div", ["product__row"])
     container.append(row)
-    row.append(this.createImageContainer())
+
+    row.append(this.createImageContainer(this.data.images))
+
+    row.append(
+      this.createInfoContainer(
+        this.data.title,
+        this.data.price,
+        this.data.oldPrice,
+        this.data.salePercent,
+        this.data.rating,
+        this.data.text
+      )
+    )
+
     this.wrapper.append(container)
   }
 }
-const productElement = new ProductComponentElement(".product")
-productElement.render()
-//  <div class="product__container">
-//         <div class="product__row">
-//           <div class="product__images images-product">
-//             <div class="images-product__grid">
-//               <img src="./images/product/image1.png" alt="product-image" class="images-product__image">
-//               <img src="./images/product/image2.png" alt="product-image" class="images-product__image">
-//               <img src="./images/product/image3.png" alt="product-image" class="images-product__image">
-//               <div class="images-product__main-image"><img src="./images/product/image3.png" alt="product-image"
-//                   class="images-product__image"></div>
-//             </div>
-//           </div>
-//           <div class="product__info info-product">
-//             <h6 class="info-product__title">One Life Graphic T-shirt</h6>
-//             <div class="info-product__scores scores-info-product">
-//               <div class="scores-info-product__stars">
-//                 <div class="scores-info-product__star _icon-star"></div>
-//                 <div class="scores-info-product__star _icon-star"></div>
-//                 <div class="scores-info-product__star _icon-star"></div>
-//                 <div class="scores-info-product__star _icon-star"></div>
-//                 <div class="scores-info-product__star _icon-star-half"></div>
-//               </div>
-//               <div class="scores-info-product__scores">
-//                 <div class="scores-info-product__score">4.5/</div>
-//                 <div class="scores-info-product__score">5</div>
-//               </div>
-//             </div>
-//             <div class="info-product__price price-info-product">
-//               <div class="price-info-product__price">$260</div>
-//               <div class="price-info-product__price-half">$300</div>
-//               <div class="price-info-product__sale-percent">-40%</div>
-//             </div>
-//             <div class="info-product__info-text">This graphic t-shirt which is perfect for any occasion. Crafted from a
-//               soft and breathable fabric, it offers superior comfort and style.</div>
-//             <div class="info-product__border"></div>
-//             <div class="info-product__colors colors-info-product">
-//               <div class="colors-info-product__title">Select Colors</div>
-//               <div class="colors-info-product__colors">
-//                 <div class="colors-info-product__color _icon-checkbox"></div>
-//                 <div class="colors-info-product__color"></div>
-//                 <div class="colors-info-product__color"></div>
-//               </div>
-//             </div>
-//             <div class="info-product__border"></div>
-//             <div class="info-product__size size-info-product">
-//               <div class="size-info-product__title">Choose Size</div>
-//               <div class="size-info-product__buttons">
-//                 <button class="size-info-product__button">Small</button>
-//                 <button class="size-info-product__button">Medium</button>
-//                 <button class="size-info-product__button">Large</button>
-//                 <button class="size-info-product__button">X-Large</button>
-//               </div>
-//             </div>
-//             <div class="info-product__border"></div>
-//             <div class="info-product__add add-info-product">
-//               <div class="add-info-product__row">
-//                 <div class="add-info-product__count count-add-info-product">
-//                   <button class="count-add-info-product__minus">-</button>
-//                   <div class="count-add-info-product__count">1</div>
-//                   <button class="count-add-info-product__plus">+</button>
-//                 </div>
-//                 <button class="add-info-product__button-add">Add to Cart</button>
 
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
+// const productElement = new ProductComponentElement(".product", prod)
+// productElement.render()
