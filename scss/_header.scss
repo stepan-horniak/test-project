@@ -344,6 +344,7 @@ header {
         font-size: toRem(20);
       }
     }
+
     @media (max-width: toEm(767.98)) {
       margin-right: 0;
       &.active {
@@ -368,6 +369,24 @@ header {
   // .favorite-header__basket
 
   &__basket {
+    position: relative;
+    & > span {
+      aspect-ratio: 1/1;
+      min-height: fit-content;
+      position: absolute;
+      top: 70%;
+
+      background-color: #ffffff;
+      left: toRem(-10);
+      // transform: translate(-50%, -50%);
+      font-size: toRem(16);
+      font-weight: 700;
+      padding: toRem(2);
+      border-radius: 50%;
+      border: toRem(2) solid red;
+      color: red;
+      overflow: hidden;
+    }
   }
 
   // .favorite-header__user

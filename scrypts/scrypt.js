@@ -127,17 +127,20 @@ function windowLoaded() {
       const productEl = el.closest(".product__container")
       if (productEl) {
         const idEl = productEl.getAttribute("id")
-
-        // Отримуємо існуючий масив з localStorage або створюємо новий
         const savedIds = JSON.parse(localStorage.getItem("cartIds")) || []
+        const arr = []
+        const countEl = document.querySelector(".count-add-info-product__count")
+        arr.push(idEl, countEl.textContent)
 
-        // Додаємо новий id
-        savedIds.push(idEl)
-
-        console.log(idEl)
-
-        // Зберігаємо назад
+        savedIds.push(arr)
         localStorage.setItem("cartIds", JSON.stringify(savedIds))
+
+        const basketHeaderIcon = document.querySelector(
+          ".favorite-header__basket"
+        )
+        const htmlCode = `<span>${savedIds.length}</span>`
+
+        basketHeaderIcon.insertAdjacentHTML("beforeend", htmlCode)
       }
     }
     //======================ASIDE===========================
@@ -300,6 +303,7 @@ function windowLoaded() {
       const idElement = el.closest(".card__card").getAttribute("id")
       window.location.href = `/product.html?id=${idElement}`
     }
+
     //======================================================================
   }
   document.addEventListener("click", (e) => documentActions(e))
@@ -358,6 +362,15 @@ function windowLoaded() {
     productCategory.render(0, 9)
   }
   //===============================================
+  localStorage.clear()
+  if (localStorage.getItem("cartIds")) {
+    const savedIds = JSON.parse(localStorage.getItem("cartIds"))
+
+    const basketHeaderIcon = document.querySelector(".favorite-header__basket")
+    const htmlCode = `<span>${savedIds.length}</span>`
+
+    basketHeaderIcon.insertAdjacentHTML("beforeend", htmlCode)
+  }
 
   //======================================================================
 

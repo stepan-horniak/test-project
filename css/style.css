@@ -626,6 +626,26 @@ header {
     gap: 0.875rem;
   }
 }
+.favorite-header__basket {
+  position: relative;
+}
+.favorite-header__basket > span {
+  aspect-ratio: 1/1;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  position: absolute;
+  top: 70%;
+  background-color: #ffffff;
+  left: -0.625rem;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.125rem;
+  border-radius: 50%;
+  border: 0.125rem solid red;
+  color: red;
+  overflow: hidden;
+}
 .footer__wrapper {
   background-color: #f0f0f0;
 }
