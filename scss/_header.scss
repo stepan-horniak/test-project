@@ -370,22 +370,25 @@ header {
 
   &__basket {
     position: relative;
-    & > span {
+    & > div {
       aspect-ratio: 1/1;
-      min-height: fit-content;
       position: absolute;
       top: 70%;
 
       background-color: #ffffff;
       left: toRem(-10);
-      // transform: translate(-50%, -50%);
-      font-size: toRem(16);
-      font-weight: 700;
-      padding: toRem(2);
+      width: toRem(25);
       border-radius: 50%;
       border: toRem(2) solid red;
-      color: red;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      > span {
+        color: red;
+        font-weight: 700;
+        font-size: toRem(16);
+      }
     }
   }
 

@@ -14,6 +14,10 @@ function windowLoaded() {
       document.querySelector(".header__burger").classList.remove("active")
       document.querySelector(".header__nav").classList.remove("active")
     }
+
+    if (el.closest(".favorite-header__basket")) {
+      window.location.href = "./cart.html"
+    }
     //===========header-search============
 
     if (el.closest(".search-header__button")) {
@@ -128,17 +132,18 @@ function windowLoaded() {
       if (productEl) {
         const idEl = productEl.getAttribute("id")
         const savedIds = JSON.parse(localStorage.getItem("cartIds")) || []
-        const arr = []
+        const arrWrapper = []
         const countEl = document.querySelector(".count-add-info-product__count")
-        arr.push(idEl, countEl.textContent)
-
-        savedIds.push(arr)
+        arrWrapper.push(idEl, countEl.textContent)
+        savedIds.push(arrWrapper)
         localStorage.setItem("cartIds", JSON.stringify(savedIds))
 
         const basketHeaderIcon = document.querySelector(
           ".favorite-header__basket"
         )
-        const htmlCode = `<span>${savedIds.length}</span>`
+        const htmlCode = `<div>
+        <span>${savedIds.length}</span>
+        </div>`
 
         basketHeaderIcon.insertAdjacentHTML("beforeend", htmlCode)
       }
@@ -279,7 +284,8 @@ function windowLoaded() {
       el.closest(".add-block-cart__minus") ||
       el.closest(".add-block-cart__plus")
     ) {
-      let countElement = document.querySelector(".add-block-cart__span")
+      const currentEl = el.closest(".add-block-cart__count")
+      let countElement = currentEl.querySelector(".add-block-cart__span")
       let numberCount = parseInt(countElement.textContent)
       if (el.closest(".add-block-cart__minus") && numberCount > 1) {
         numberCount -= 1
@@ -362,12 +368,12 @@ function windowLoaded() {
     productCategory.render(0, 9)
   }
   //===============================================
-  localStorage.clear()
   if (localStorage.getItem("cartIds")) {
     const savedIds = JSON.parse(localStorage.getItem("cartIds"))
 
     const basketHeaderIcon = document.querySelector(".favorite-header__basket")
-    const htmlCode = `<span>${savedIds.length}</span>`
+    const htmlCode = `<div>
+    <span>${savedIds.length}</span></div>`
 
     basketHeaderIcon.insertAdjacentHTML("beforeend", htmlCode)
   }
