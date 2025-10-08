@@ -295,15 +295,32 @@ function windowLoaded() {
       countElement.textContent = numberCount
     }
     //=======================cart delete element=================
+
     if (el.closest(".add-block-cart__icon-delete")) {
       const parrentElement = el.closest(".block-cart")
       const nextEl = parrentElement.nextElementSibling
-      if (nextEl && nextEl.classList.contains("cart__products-border")) {
-        parrentElement.nextElementSibling.remove()
-      }
-      parrentElement.remove()
-    }
 
+      // Якщо після товару є "border", видаляємо його
+      if (nextEl && nextEl.classList.contains("cart__products-border")) {
+        nextEl.remove()
+      }
+
+      parrentElement.remove()
+
+      const arrIds = JSON.parse(localStorage.getItem("cartIds"))
+
+      const idElement = parrentElement.getAttribute("id")
+
+      const newArr = arrIds.filter((el) => {
+        return el[0] != idElement
+      })
+
+      localStorage.setItem("cartIds", JSON.stringify(newArr))
+
+      const elCount = document.querySelector(".favorite-header__basket-count")
+      elCount.textContent = newArr.length
+      calculateSumCard()
+    }
     //======================= CLICK PRODUCT CARD =======================
     if (el.closest(".card__card")) {
       const idElement = el.closest(".card__card").getAttribute("id")
@@ -315,7 +332,65 @@ function windowLoaded() {
   document.addEventListener("click", (e) => documentActions(e))
 
   //================ PAGE LOADED =============================================
+  function calculateSumCard() {
+    const totalSumEl = document.querySelector(".summary-cart__sum-price")
+    const discountSumEl = document.querySelector(
+      ".summary-cart__discount-price"
+    )
+    const discountPercentEl = document.querySelector(
+      ".summary-cart__discount-text-span"
+    )
+    const totalPriceEl = document.querySelector(".summary-cart__total-price")
 
+    const productsOnPage = document.querySelectorAll(".block-cart")
+
+    let totalSum = 0
+    let discountSum = 0 // 🔹 додав окрему змінну для реально нарахованої знижки
+    let percent = 0
+    let percenCount = 0
+
+    const delivery = 15
+
+    productsOnPage.forEach((block) => {
+      const priceEl = block.querySelector(
+        ".info-block-cart__price-price"
+      ).textContent
+      const price = parseFloat(priceEl.replace(/[^\d.]/g, "")) || 0 // 🔹 додаємо || 0 на випадок порожнього тексту
+      totalSum += price
+
+      const priceOldEl = block.querySelector(".info-block-cart__price-old")
+      if (priceOldEl) {
+        const oldPrice =
+          parseFloat(priceOldEl.textContent.replace(/[^\d.]/g, "")) || 0 // 🔹 теж || 0
+        discountSum += oldPrice - price // 🔹 рахуємо реальну знижку
+      }
+
+      const percentEl = block.querySelector(
+        ".info-block-cart__price-sale-percent"
+      )
+      if (percentEl) {
+        percent += parseFloat(percentEl.textContent.replace(/[^\d.]/g, "")) || 0 // 🔹 || 0 щоб не було NaN
+        percenCount++
+      }
+    })
+
+    totalSumEl.textContent = `$${totalSum}`
+
+    // 🔹 виводимо реальну суму знижки
+    discountSumEl.textContent = `-$${discountSum}`
+
+    // 🔹 перевірка на нуль, щоб не було NaN при відсутності відсотків
+    discountPercentEl.textContent =
+      percenCount > 0 ? `(-${Math.round(percent / percenCount)}%)` : "(-0%)"
+
+    totalPriceEl.textContent = `$${(totalSum + delivery).toFixed(2)}`
+
+    console.log("totalSum:", totalSum, "discountSum:", discountSum)
+  }
+
+  if (window.location.pathname.endsWith("/cart.html")) {
+    calculateSumCard()
+  }
   const urlParams = new URLSearchParams(window.location.search)
   const productId = urlParams.get("id")
   if (productId) {
@@ -373,7 +448,7 @@ function windowLoaded() {
 
     const basketHeaderIcon = document.querySelector(".favorite-header__basket")
     const htmlCode = `<div>
-    <span>${savedIds.length}</span></div>`
+    <span class='favorite-header__basket-count'>${savedIds.length}</span></div>`
 
     basketHeaderIcon.insertAdjacentHTML("beforeend", htmlCode)
   }

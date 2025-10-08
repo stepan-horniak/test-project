@@ -61,10 +61,26 @@ class cartProduct {
     colorEl.append(colorSpan)
     wrapperInfo.append(colorEl)
 
-    const price = this.createElement("div", ["info-block-cart__price"])
-    price.textContent = `$${data.price}`
-    wrapperInfo.append(price)
+    const wrapperPrice = this.createElement("div", ["info-block-cart__price"])
 
+    const price = this.createElement("div", ["info-block-cart__price-price"])
+    price.textContent = `$${data.price}`
+    wrapperPrice.append(price)
+
+    if (data.oldPrice) {
+      const oldPrice = this.createElement("div", ["info-block-cart__price-old"])
+      oldPrice.textContent = `$${data.oldPrice}`
+      wrapperPrice.append(oldPrice)
+    }
+
+    if ("salePercent" in data) {
+      const salePercent = this.createElement("div", [
+        "info-block-cart__price-sale-percent",
+      ])
+      salePercent.textContent = `$${data.salePercent}`
+      wrapperPrice.append(salePercent)
+    }
+    wrapperInfo.append(wrapperPrice)
     return wrapperInfo
   }
   createAddRemoveContainer(data) {
@@ -100,6 +116,7 @@ class cartProduct {
 
     for (let i = 0; i < elementData.length; i++) {
       const block = this.createElement("div", ["block-cart"])
+      block.setAttribute("id", elementData[i].id)
       block.append(this.createImageContainer(elementData[i]))
       block.append(this.createInfoContainer(elementData[i]))
       block.append(this.createAddRemoveContainer())

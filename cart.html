@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./css/style.css">
 
   <script defer src="./scrypts/data.js"></script>
-  <script defer src="./scrypts/card-product-component.js"></script>
+  <script defer src="./scrypts/cart-product-component.js"></script>
   <script defer src="./scrypts/scrypt.js"></script>
   <title>cart</title>
 </head>
@@ -98,24 +98,7 @@
         <div class="cart__title title">Your cart</div>
         <div class="cart__row">
           <div class="cart__products">
-            <div class="block-cart">
-              <div class="block-cart__image"><img src="./images/arrivals/frame.png" alt=""></div>
-              <div class="block-cart__info info-block-cart">
-                <div class="info-block-cart__title"> Gradient Graphic T-shirt</div>
-                <div class="info-block-cart__size">Size: <span>Large</span></div>
-                <div class="info-block-cart__color">Color: <span>White</span></div>
-                <div class="info-block-cart__price">$145</div>
-              </div>
-              <div class="block-cart__add add-block-cart">
-                <div class="add-block-cart__icon-delete _icon-dump"></div>
-                <div class="add-block-cart__count">
-                  <button class="add-block-cart__minus">-</button>
-                  <span class="add-block-cart__span">1</span>
-                  <button class="add-block-cart__plus">+</button>
-                </div>
-              </div>
-            </div>
-            <div class="cart__products-border"></div>
+
           </div>
           <div class="cart__summary summary-cart">
             <div class="summary-cart__title">Order Summary</div>
@@ -124,7 +107,8 @@
               <div class="summary-cart__sum-price">$145</div>
             </div>
             <div class="summary-cart__discount">
-              <div class="summary-cart__discount-text">Discount <span>(-20%)</span></div>
+              <div class="summary-cart__discount-text">Discount <span
+                  class="summary-cart__discount-text-span">(-20%)</span></div>
               <div class="summary-cart__discount-price">-$113</div>
             </div>
             <div class="summary-cart__delivery">
