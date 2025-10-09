@@ -456,10 +456,26 @@
     border-radius: toRem(62);
     flex-grow: 1;
     padding: toRem(16) toRem(20);
-
+    position: relative;
     @media (max-width: toEm(767.98)) {
       font-size: toRem(14);
     }
+  }
+  //.add-info-product__button-add-message
+  &__button-add-message {
+    position: absolute;
+    top: toRem(-10);
+    right: toRem(-10);
+    background-color: #f33;
+    color: #fff;
+    border-radius: toRem(62);
+    padding: toRem(4) toRem(8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: toRem(12);
+    font-weight: 500;
+    white-space: nowrap;
   }
 }
 .count-add-info-product {

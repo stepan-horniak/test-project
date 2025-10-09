@@ -127,27 +127,44 @@ function windowLoaded() {
       }
       countElement.textContent = numberCount
     }
+    //===============button add product in cart=====
     if (el.closest(".add-info-product__button-add")) {
       const productEl = el.closest(".product__container")
       if (productEl) {
         const idEl = productEl.getAttribute("id")
         const savedIds = JSON.parse(localStorage.getItem("cartIds")) || []
-        const arrWrapper = []
+        const buttonEl = productEl.querySelector(
+          ".add-info-product__button-add"
+        )
+
+        const elMessage = document.createElement("div")
+        elMessage.classList.add("add-info-product__button-add-message")
+        elMessage.textContent = "Товар вже в корзині"
+
+        const exists = savedIds.some((el) => el[0] === idEl)
+
+        if (exists) {
+          if (
+            !buttonEl.querySelector(".add-info-product__button-add-message")
+          ) {
+            buttonEl.append(elMessage)
+            setTimeout(() => elMessage.remove(), 2000)
+          }
+          return
+        }
+
         const countEl = document.querySelector(".count-add-info-product__count")
-        arrWrapper.push(idEl, countEl.textContent)
+        const arrWrapper = [idEl, countEl.textContent]
         savedIds.push(arrWrapper)
         localStorage.setItem("cartIds", JSON.stringify(savedIds))
 
         const basketHeaderIcon = document.querySelector(
           ".favorite-header__basket"
         )
-        const htmlCode = `<div>
-        <span>${savedIds.length}</span>
-        </div>`
-
-        basketHeaderIcon.insertAdjacentHTML("beforeend", htmlCode)
+        basketHeaderIcon.innerHTML = `<div><span>${savedIds.length}</span></div>`
       }
     }
+
     //======================ASIDE===========================
     //=================aside show hidden sub-menu===================
 
@@ -300,7 +317,6 @@ function windowLoaded() {
       const parrentElement = el.closest(".block-cart")
       const nextEl = parrentElement.nextElementSibling
 
-      // Якщо після товару є "border", видаляємо його
       if (nextEl && nextEl.classList.contains("cart__products-border")) {
         nextEl.remove()
       }
@@ -343,14 +359,19 @@ function windowLoaded() {
     const totalPriceEl = document.querySelector(".summary-cart__total-price")
 
     const productsOnPage = document.querySelectorAll(".block-cart")
+    const deliveryEl = document.querySelector(".summary-cart__delivery-price")
 
     let totalSum = 0
     let discountSum = 0 // 🔹 додав окрему змінну для реально нарахованої знижки
     let percent = 0
     let percenCount = 0
 
-    const delivery = 15
+    let delivery = 15
 
+    if (productsOnPage.length === 0) {
+      delivery = 0
+    }
+    deliveryEl.textContent = `$${delivery.toFixed(2)}`
     productsOnPage.forEach((block) => {
       const priceEl = block.querySelector(
         ".info-block-cart__price-price"
@@ -374,18 +395,16 @@ function windowLoaded() {
       }
     })
 
-    totalSumEl.textContent = `$${totalSum}`
+    totalSumEl.textContent = `$${totalSum.toFixed(2)}`
 
     // 🔹 виводимо реальну суму знижки
-    discountSumEl.textContent = `-$${discountSum}`
+    discountSumEl.textContent = `-$${discountSum.toFixed(2)}`
 
     // 🔹 перевірка на нуль, щоб не було NaN при відсутності відсотків
     discountPercentEl.textContent =
       percenCount > 0 ? `(-${Math.round(percent / percenCount)}%)` : "(-0%)"
 
     totalPriceEl.textContent = `$${(totalSum + delivery).toFixed(2)}`
-
-    console.log("totalSum:", totalSum, "discountSum:", discountSum)
   }
 
   if (window.location.pathname.endsWith("/cart.html")) {
@@ -442,15 +461,24 @@ function windowLoaded() {
     )
     productCategory.render(0, 9)
   }
-  //===============================================
+  //======================add icon number product in cart===============
   if (localStorage.getItem("cartIds")) {
     const savedIds = JSON.parse(localStorage.getItem("cartIds"))
 
     const basketHeaderIcon = document.querySelector(".favorite-header__basket")
-    const htmlCode = `<div>
+    const htmlCode = `<div class='favorite-header__basket-count-wrapper'>
     <span class='favorite-header__basket-count'>${savedIds.length}</span></div>`
 
     basketHeaderIcon.insertAdjacentHTML("beforeend", htmlCode)
+  } else {
+    const basketHeaderIcon = document.querySelector(".favorite-header__basket")
+    basketHeaderIcon.childNodes.remove()
+  }
+  //==================delete icon number product in cart=======
+  if (JSON.parse(localStorage.getItem("cartIds")).length === 0) {
+    const basketHeaderIconWrapper = document
+      .querySelector(".favorite-header__basket-count-wrapper")
+      .remove()
   }
 
   //======================================================================

@@ -12,7 +12,10 @@ class cartProduct {
       let foundElement = this.data.find(
         (product) => product.id === parseInt(savedIds[i][0])
       )
-      if (foundElement) arrElements.push(foundElement)
+      if (foundElement) {
+        foundElement.number = savedIds[i][1]
+        arrElements.push(foundElement)
+      }
     }
 
     return arrElements
@@ -100,7 +103,7 @@ class cartProduct {
     countMinus.textContent = "-"
     countWrapper.append(countMinus)
     const countSpan = this.createElement("span", ["add-block-cart__span"])
-    countSpan.textContent = "1"
+    countSpan.textContent = data.number
 
     countWrapper.append(countSpan)
     const countPlus = this.createElement("button", ["add-block-cart__plus"])
@@ -112,14 +115,14 @@ class cartProduct {
     return wrapper
   }
   render() {
-    const elementData = this.getProductFromlocalStorageData() //for
+    let elementData = this.getProductFromlocalStorageData() //for
 
     for (let i = 0; i < elementData.length; i++) {
       const block = this.createElement("div", ["block-cart"])
       block.setAttribute("id", elementData[i].id)
       block.append(this.createImageContainer(elementData[i]))
       block.append(this.createInfoContainer(elementData[i]))
-      block.append(this.createAddRemoveContainer())
+      block.append(this.createAddRemoveContainer(elementData[i]))
 
       this.container.append(block)
       if (i < elementData.length - 1) {
