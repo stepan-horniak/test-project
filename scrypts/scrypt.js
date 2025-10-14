@@ -481,12 +481,17 @@ if (localStorage.getItem("cartIds")) {
   basketHeaderIcon.innerHTML = ""
 }
   //==================delete icon number product in cart=======
-  if (JSON.parse(localStorage.getItem("cartIds")).length === 0) {
-    const basketHeaderIconWrapper = document
-      .querySelector(".favorite-header__basket-count-wrapper")
-      .remove()
-  }
+if (
+  localStorage.getItem("cartIds") &&
+  JSON.parse(localStorage.getItem("cartIds")).length === 0
+) {
+  const basketHeaderIconWrapper = document.querySelector(
+    ".favorite-header__basket-count-wrapper"
+  )
+  if (basketHeaderIconWrapper) basketHeaderIconWrapper.remove()
+}
 
+  
   //======================================================================
 
   function handleScreenChange(e) {
