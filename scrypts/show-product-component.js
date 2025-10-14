@@ -8,7 +8,7 @@ class ProductsCard {
 
   createCard(id) {
     this.#cardWrapper = document.createElement("a")
-    this.#cardWrapper.setAttribute("href", "#")
+    this.#cardWrapper.setAttribute("href", "./product.html")
     this.#cardWrapper.setAttribute("id", id)
 
     this.#cardWrapper.classList.add("card__card")
