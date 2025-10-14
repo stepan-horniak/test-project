@@ -462,18 +462,24 @@ function windowLoaded() {
     productCategory.render(0, 9)
   }
   //======================add icon number product in cart===============
-  if (localStorage.getItem("cartIds")) {
-    const savedIds = JSON.parse(localStorage.getItem("cartIds"))
+const basketHeaderIcon = document.querySelector(".favorite-header__basket")
 
-    const basketHeaderIcon = document.querySelector(".favorite-header__basket")
-    const htmlCode = `<div class='favorite-header__basket-count-wrapper'>
-    <span class='favorite-header__basket-count'>${savedIds.length}</span></div>`
+if (localStorage.getItem("cartIds")) {
+  const savedIds = JSON.parse(localStorage.getItem("cartIds"))
 
-    basketHeaderIcon.insertAdjacentHTML("beforeend", htmlCode)
-  } else {
-    const basketHeaderIcon = document.querySelector(".favorite-header__basket")
-    basketHeaderIcon.childNodes.remove()
-  }
+  const htmlCode = `
+    <div class='favorite-header__basket-count-wrapper'>
+      <span class='favorite-header__basket-count'>${savedIds.length}</span>
+    </div>
+  `
+
+  // Спершу очистимо, щоб не дублювалось
+  basketHeaderIcon.innerHTML = ""
+  basketHeaderIcon.insertAdjacentHTML("beforeend", htmlCode)
+} else {
+  // Якщо немає даних — просто очищаємо вміст
+  basketHeaderIcon.innerHTML = ""
+}
   //==================delete icon number product in cart=======
   if (JSON.parse(localStorage.getItem("cartIds")).length === 0) {
     const basketHeaderIconWrapper = document
