@@ -2,7 +2,7 @@ const productsArrivals = [
   {
     id: 1,
     title: "T-SHIRT WITH TAPE DETAILS",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 4.5,
     price: 120,
     text: "Stylish cotton t-shirt with modern tape details for everyday comfort.",
@@ -10,7 +10,7 @@ const productsArrivals = [
   {
     id: 2,
     title: "HOODED SWEATSHIRT",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 5,
     price: 200,
     oldPrice: 250,
@@ -20,7 +20,7 @@ const productsArrivals = [
   {
     id: 3,
     title: "SPORTS SHOES",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 3.5,
     price: 180,
     oldPrice: 220,
@@ -30,7 +30,7 @@ const productsArrivals = [
   {
     id: 4,
     title: "CLASSIC JEANS",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 4,
     price: 140,
     text: "Durable and stylish jeans with a classic straight cut.",
@@ -38,7 +38,7 @@ const productsArrivals = [
   {
     id: 5,
     title: "SUMMER SHORTS",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 4.2,
     price: 90,
     oldPrice: 120,
@@ -48,7 +48,7 @@ const productsArrivals = [
   {
     id: 6,
     title: "COTTON T-SHIRT",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 4.8,
     price: 110,
     oldPrice: 130,
@@ -58,7 +58,7 @@ const productsArrivals = [
   {
     id: 7,
     title: "LEATHER JACKET",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 5,
     price: 350,
     oldPrice: 400,
@@ -68,7 +68,7 @@ const productsArrivals = [
   {
     id: 8,
     title: "CAP WITH LOGO",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 3.8,
     price: 50,
     oldPrice: 65,
@@ -78,7 +78,7 @@ const productsArrivals = [
   {
     id: 9,
     title: "DENIM SKIRT",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 4.3,
     price: 130,
     oldPrice: 160,
@@ -88,7 +88,7 @@ const productsArrivals = [
   {
     id: 10,
     title: "SNEAKERS CLASSIC",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 4.7,
     price: 210,
     oldPrice: 250,
@@ -98,7 +98,7 @@ const productsArrivals = [
   {
     id: 11,
     title: "TRACKSUIT",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 4.6,
     price: 240,
     oldPrice: 300,
@@ -108,7 +108,7 @@ const productsArrivals = [
   {
     id: 12,
     title: "LEATHER BELT",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 4.4,
     price: 80,
     oldPrice: 95,
@@ -118,7 +118,7 @@ const productsArrivals = [
   {
     id: 13,
     title: "COTTON HOODIE",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 4.5,
     price: 190,
     oldPrice: 230,
@@ -128,7 +128,7 @@ const productsArrivals = [
   {
     id: 14,
     title: "CLASSIC WATCH",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 4.9,
     price: 450,
     oldPrice: 520,
@@ -138,7 +138,7 @@ const productsArrivals = [
   {
     id: 15,
     title: "SUNGLASSES",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 4.3,
     price: 120,
     oldPrice: 140,
@@ -148,7 +148,7 @@ const productsArrivals = [
   {
     id: 16,
     title: "SPORTS BACKPACK",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 4.7,
     price: 170,
     oldPrice: 210,
@@ -158,7 +158,7 @@ const productsArrivals = [
   {
     id: 17,
     title: "CASUAL SHOES",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 4.5,
     price: 190,
     oldPrice: 230,
@@ -168,7 +168,7 @@ const productsArrivals = [
   {
     id: 18,
     title: "WINTER JACKET",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 5,
     price: 400,
     oldPrice: 460,
@@ -178,7 +178,7 @@ const productsArrivals = [
   {
     id: 19,
     title: "LEATHER WALLET",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 4.6,
     price: 95,
     oldPrice: 110,
@@ -188,7 +188,7 @@ const productsArrivals = [
   {
     id: 20,
     title: "SPORTS CAP",
-    images: ["/images/arrivals/frame.png"],
+    images: ["./images/arrivals/frame.png"],
     rating: 3.5,
     price: 55,
     oldPrice: 70,
@@ -201,7 +201,7 @@ const productsSelling = [
   {
     id: 21,
     title: "KNIT SWEATER",
-    images: ["/images/selling/image.png"],
+    images: ["./images/selling/image.png"],
     rating: 4.6,
     price: 130,
     oldPrice: 160,
@@ -211,7 +211,7 @@ const productsSelling = [
   {
     id: 22,
     title: "DENIM JACKET",
-    images: ["/images/selling/image.png"],
+    images: ["./images/selling/image.png"],
     rating: 5,
     price: 280,
     oldPrice: 320,
@@ -221,7 +221,7 @@ const productsSelling = [
   {
     id: 23,
     title: "SPORTY LEGGINGS",
-    images: ["/images/selling/image.png"],
+    images: ["./images/selling/image.png"],
     rating: 4.1,
     price: 95,
     oldPrice: 120,
@@ -231,7 +231,7 @@ const productsSelling = [
   {
     id: 24,
     title: "BASIC POLO SHIRT",
-    images: ["/images/selling/image.png"],
+    images: ["./images/selling/image.png"],
     rating: 3.9,
     price: 70,
     text: "Basic cotton polo shirt with casual design.",
@@ -239,7 +239,7 @@ const productsSelling = [
   {
     id: 25,
     title: "FLORAL DRESS",
-    images: ["/images/selling/image.png"],
+    images: ["./images/selling/image.png"],
     rating: 4.5,
     price: 150,
     oldPrice: 180,
@@ -249,7 +249,7 @@ const productsSelling = [
   {
     id: 26,
     title: "RUNNING SNEAKERS",
-    images: ["/images/selling/image.png"],
+    images: ["./images/selling/image.png"],
     rating: 4.8,
     price: 220,
     oldPrice: 260,
@@ -259,7 +259,7 @@ const productsSelling = [
   {
     id: 27,
     title: "LEATHER BELT",
-    images: ["/images/selling/image.png"],
+    images: ["./images/selling/image.png"],
     rating: 4.3,
     price: 45,
     text: "Durable leather belt with classic buckle.",
@@ -267,7 +267,7 @@ const productsSelling = [
   {
     id: 28,
     title: "BASEBALL CAP",
-    images: ["/images/selling/image.png"],
+    images: ["./images/selling/image.png"],
     rating: 3.7,
     price: 35,
     oldPrice: 50,
@@ -277,7 +277,7 @@ const productsSelling = [
   {
     id: 29,
     title: "COTTON SHIRT",
-    images: ["/images/selling/image.png"],
+    images: ["./images/selling/image.png"],
     rating: 4.2,
     price: 85,
     oldPrice: 100,
@@ -287,7 +287,7 @@ const productsSelling = [
   {
     id: 30,
     title: "SLIM FIT TROUSERS",
-    images: ["/images/selling/image.png"],
+    images: ["./images/selling/image.png"],
     rating: 4.9,
     price: 190,
     oldPrice: 220,
@@ -300,7 +300,7 @@ const productsLikes = [
   {
     id: 31,
     title: "KNIT SWEATER",
-    images: ["/images/selling/image.png"],
+    images: ["./images/selling/image.png"],
     rating: 4.6,
     price: 130,
     oldPrice: 160,
@@ -310,7 +310,7 @@ const productsLikes = [
   {
     id: 32,
     title: "DENIM JACKET",
-    images: ["/images/selling/image.png"],
+    images: ["./images/selling/image.png"],
     rating: 5,
     price: 280,
     oldPrice: 320,
@@ -320,7 +320,7 @@ const productsLikes = [
   {
     id: 33,
     title: "SPORTY LEGGINGS",
-    images: ["/images/selling/image.png"],
+    images: ["./images/selling/image.png"],
     rating: 4.1,
     price: 95,
     oldPrice: 120,
@@ -330,7 +330,7 @@ const productsLikes = [
   {
     id: 34,
     title: "BASIC POLO SHIRT",
-    images: ["/images/selling/image.png"],
+    images: ["./images/selling/image.png"],
     rating: 3.9,
     price: 70,
     text: "Basic cotton polo shirt with casual design.",
@@ -341,7 +341,7 @@ const productsCategory = [
   {
     id: 35,
     title: "T-SHIRT WITH TAPE DETAILS",
-    images: ["/images/category/image-1.png"],
+    images: ["./images/category/image-1.png"],
     rating: 4.5,
     price: 120,
     text: "Stylish cotton t-shirt with modern tape details.",
@@ -349,7 +349,7 @@ const productsCategory = [
   {
     id: 36,
     title: "HOODED SWEATSHIRT",
-    images: ["/images/category/image-2.png"],
+    images: ["./images/category/image-2.png"],
     rating: 5,
     price: 200,
     oldPrice: 250,
@@ -359,7 +359,7 @@ const productsCategory = [
   {
     id: 37,
     title: "SPORTS SHOES",
-    images: ["/images/category/image-3.png"],
+    images: ["./images/category/image-3.png"],
     rating: 3.5,
     price: 180,
     oldPrice: 220,
@@ -369,7 +369,7 @@ const productsCategory = [
   {
     id: 38,
     title: "CLASSIC JEANS",
-    images: ["/images/category/image-4.png"],
+    images: ["./images/category/image-4.png"],
     rating: 4,
     price: 140,
     text: "Classic denim jeans with durable fabric.",
@@ -377,7 +377,7 @@ const productsCategory = [
   {
     id: 39,
     title: "SUMMER SHORTS",
-    images: ["/images/category/image-5.png"],
+    images: ["./images/category/image-5.png"],
     rating: 4.2,
     price: 90,
     oldPrice: 120,
@@ -387,7 +387,7 @@ const productsCategory = [
   {
     id: 40,
     title: "COTTON T-SHIRT",
-    images: ["/images/category/image-6.png"],
+    images: ["./images/category/image-6.png"],
     rating: 4.8,
     price: 110,
     oldPrice: 130,
@@ -397,7 +397,7 @@ const productsCategory = [
   {
     id: 41,
     title: "LEATHER JACKET",
-    images: ["/images/category/image-7.png"],
+    images: ["./images/category/image-7.png"],
     rating: 5,
     price: 350,
     oldPrice: 400,
@@ -407,7 +407,7 @@ const productsCategory = [
   {
     id: 42,
     title: "CAP WITH LOGO",
-    images: ["/images/category/image-8.png"],
+    images: ["./images/category/image-8.png"],
     rating: 3.8,
     price: 50,
     oldPrice: 65,
@@ -417,7 +417,7 @@ const productsCategory = [
   {
     id: 43,
     title: "DENIM SKIRT",
-    images: ["/images/category/image-9.png"],
+    images: ["./images/category/image-9.png"],
     rating: 4.3,
     price: 130,
     oldPrice: 160,
@@ -427,7 +427,7 @@ const productsCategory = [
   {
     id: 44,
     title: "SNEAKERS CLASSIC",
-    images: ["/images/category/image-10.png"],
+    images: ["./images/category/image-10.png"],
     rating: 4.7,
     price: 210,
     oldPrice: 250,
@@ -437,7 +437,7 @@ const productsCategory = [
   {
     id: 45,
     title: "TRACKSUIT",
-    images: ["/images/category/image-11.png"],
+    images: ["./images/category/image-11.png"],
     rating: 4.6,
     price: 240,
     oldPrice: 300,
@@ -447,7 +447,7 @@ const productsCategory = [
   {
     id: 46,
     title: "LEATHER BELT",
-    images: ["/images/category/image-12.png"],
+    images: ["./images/category/image-12.png"],
     rating: 4.4,
     price: 80,
     oldPrice: 95,
