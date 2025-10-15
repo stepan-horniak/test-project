@@ -80,7 +80,7 @@ class cartProduct {
       const salePercent = this.createElement("div", [
         "info-block-cart__price-sale-percent",
       ])
-      salePercent.textContent = `$${data.salePercent}`
+      salePercent.textContent = `${data.salePercent}`
       wrapperPrice.append(salePercent)
     }
     wrapperInfo.append(wrapperPrice)
