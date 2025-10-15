@@ -340,7 +340,7 @@ function windowLoaded() {
     //======================= CLICK PRODUCT CARD =======================
     if (el.closest(".card__card")) {
       const idElement = el.closest(".card__card").getAttribute("id")
-      window.location.href = `/product.html?id=${idElement}`
+      window.location.href = `./product.html?id=${idElement}`
     }
 
     //======================================================================
