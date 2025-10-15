@@ -310,6 +310,7 @@ function windowLoaded() {
         numberCount += 1
       }
       countElement.textContent = numberCount
+      calculateSumCard()
     }
     //=======================cart delete element=================
 
@@ -341,6 +342,7 @@ function windowLoaded() {
     if (el.closest(".card__card")) {
       const idElement = el.closest(".card__card").getAttribute("id")
       window.location.href = `./product.html?id=${idElement}`
+      
     }
 
     //======================================================================
@@ -361,6 +363,9 @@ function windowLoaded() {
     const productsOnPage = document.querySelectorAll(".block-cart")
     const deliveryEl = document.querySelector(".summary-cart__delivery-price")
 
+      const countElement = document.querySelector(".count-add-info-product__count")
+  const numberCount = parseInt(countElement.textContent)
+    
     let totalSum = 0
     let discountSum = 0 // 🔹 додав окрему змінну для реально нарахованої знижки
     let percent = 0
@@ -377,13 +382,13 @@ function windowLoaded() {
         ".info-block-cart__price-price"
       ).textContent
       const price = parseFloat(priceEl.replace(/[^\d.]/g, "")) || 0 // 🔹 додаємо || 0 на випадок порожнього тексту
-      totalSum += price
+      totalSum += price * numberCount
 
       const priceOldEl = block.querySelector(".info-block-cart__price-old")
       if (priceOldEl) {
         const oldPrice =
           parseFloat(priceOldEl.textContent.replace(/[^\d.]/g, "")) || 0 // 🔹 теж || 0
-        discountSum += oldPrice - price // 🔹 рахуємо реальну знижку
+        discountSum += (oldPrice - price)  * numberCount// 🔹 рахуємо реальну знижку
       }
 
       const percentEl = block.querySelector(
