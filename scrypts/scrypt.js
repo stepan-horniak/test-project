@@ -363,8 +363,7 @@ function windowLoaded() {
     const productsOnPage = document.querySelectorAll(".block-cart")
     const deliveryEl = document.querySelector(".summary-cart__delivery-price")
 
-      const countElement = document.querySelector(".add-block-cart__span")
-  const numberCount = parseInt(countElement.textContent)
+
     
     let totalSum = 0
     let discountSum = 0 // 🔹 додав окрему змінну для реально нарахованої знижки
