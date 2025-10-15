@@ -377,10 +377,15 @@ function windowLoaded() {
       delivery = 0
     }
     deliveryEl.textContent = `$${delivery.toFixed(2)}`
+
     productsOnPage.forEach((block) => {
       const priceEl = block.querySelector(
         ".info-block-cart__price-price"
       ).textContent
+
+
+       const countElement = block.querySelector(".add-block-cart__span")
+  const numberCount = parseInt(countElement.textContent)
       const price = parseFloat(priceEl.replace(/[^\d.]/g, "")) || 0 // 🔹 додаємо || 0 на випадок порожнього тексту
       totalSum += price * numberCount
 
