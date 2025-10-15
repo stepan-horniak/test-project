@@ -363,7 +363,7 @@ function windowLoaded() {
     const productsOnPage = document.querySelectorAll(".block-cart")
     const deliveryEl = document.querySelector(".summary-cart__delivery-price")
 
-      const countElement = document.querySelector(".count-add-info-product__count")
+      const countElement = document.querySelector(".add-block-cart__span")
   const numberCount = parseInt(countElement.textContent)
     
     let totalSum = 0
